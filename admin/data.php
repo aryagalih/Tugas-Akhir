@@ -32,7 +32,7 @@
 							<td><?php echo $siswa['nis']; ?></td>
 							<td><?php echo $siswa['nama']; ?></td>
 							<td><?php echo $siswa['nama_kelas']; ?></td>
-							<td><input type="checkbox" class="form-control" name="masuk[]" value="pilih"></td>	
+							<td><input type="checkbox" class="form-control" name="masuk[]" value="<?= $siswa['nis']; ?>"></td>	
 						</tr>
 						<?php
 						}

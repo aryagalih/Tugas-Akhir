@@ -16,6 +16,25 @@
 						</div>
 					</div>
 					<div class="dropdown-divider"></div>
+					<?php 
+		    			switch ((isset($_GET['system_message']) ? $_GET['system_message'] : '')) {
+		    				case 'sukses':
+			    				echo "<div class='alert alert-primary' role='alert'>
+			    					<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
+			    					<strong>Berhasil !</strong> Data Siswa Berhasil Diperbarui !!
+			    				</div>";
+		    					break;
+		    				case 'gagal':
+			    				echo "<div class='alert alert-danger' role='alert'>
+					    				<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>
+			    					<strong>Gagal !</strong>
+			    				</div>";
+		    					break;
+		    				default :
+		    					echo "<div></div>";
+		    				break;
+		    			}
+		        	?>
 				</div>
 			</div>
 			<div class="card">
@@ -64,36 +83,43 @@
           <h4 class="modal-title">Edit Nilai</h4>
           <button type="button" class="close" data-dismiss="modal">&times;</button>
         </div>	
-        <div class="modal-body text-center">
-        	<div class="form-group row">
-        		<div class="col-md-4">
-        			<label>Nilai Pengetahuan :</label>
+        <form action="kelola-nilai/edit-nilai.php" method="POST">
+        	<div class="modal-body text-center">
+        		<span id="e_nis"></span>
+        		<br/><br/>
+        		<input type="hidden" value="<?= $_GET['id_matpel']; ?>" name="id_matpel">
+        		<input type="hidden" id="v_id_nilai" name="id_nilai">
+        		<input type="hidden" id="v_nis" name="nis">
+        		<div class="form-group row">
+        			<div class="col-md-4">
+        				<label>Nilai Pengetahuan :</label>
+        			</div>
+        			<div class="col-md-8">
+        				<input type="text" id="v_pengetahuan" name="pengetahuan" class="form-control text-center" placeholder="0" style="width: 75px;">
+        			</div>
         		</div>
-        		<div class="col-md-8">
-        			<input type="text" id="v_pengetahuan" class="form-control text-center" placeholder="0" style="width: 75px;">
+        		<div class="form-group row">
+        			<div class="col-md-4 ">
+        				<label>Nilai Keterampilan :</label>
+        			</div>
+        			<div class="col-md-8">
+        				<input type="text" id="v_keterampilan" name="keterampilan" class="form-control text-center" placeholder="0" style="width: 75px;">
+        			</div>
+        		</div>
+        		<div class="form-group row">
+        			<div class="col-md-4">
+        				<label>Nilai Sikap :</label>
+        			</div>
+        			<div class="col-md-8">
+        				<input type="text" id="v_sikap" name="sikap" class="form-control text-center" placeholder="0" style="width: 75px;">
+        			</div>
         		</div>
         	</div>
-        	<div class="form-group row">
-        		<div class="col-md-4 ">
-        			<label>Nilai Keterampilan :</label>
-        		</div>
-        		<div class="col-md-8">
-        			<input type="text" id="v_kompetensi" class="form-control text-center" placeholder="0" style="width: 75px;">
-        		</div>
+        	<div class="modal-footer">
+        	  <button type="button" class="btn btn-dark" data-dismiss="modal">Close</button>
+        	  <button type="submit" class="btn btn-primary">Simpan</button>
         	</div>
-        	<div class="form-group row">
-        		<div class="col-md-4">
-        			<label>Nilai Sikap :</label>
-        		</div>
-        		<div class="col-md-8">
-        			<input type="text" id="v_sikap" class="form-control text-center" placeholder="0" style="width: 75px;">
-        		</div>
-        	</div>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-dark" data-dismiss="modal">Close</button>
-          <button type="submit" class="btn btn-primary">Simpan</button>
-        </div>
+        </form>
       </div>
 </section>
  <?php 
@@ -104,22 +130,23 @@
  		$('#editModal').modal('show');
  		var nis = $(obj).attr('title');
  		$.ajax({
- 			url : '<?php echo "http://localhost/template-file/admin/siswa/data-siswa.php?nis=" ?>'+nis,
+ 			url : '<?php echo "http://localhost/template-file/app/guru/data-nilai.php?nis=" ?>'+nis+'&id_nilai=<?= $matpel; ?>',
  			type : 'GET',
  			data : function(data){
  				return JSON.stringfy(data);
  			},
  			success: function(data){
- 				console.log(data);
+ 				//console.log(data);
  				var json = JSON.parse(data);
  				$('#e_nis').html('<i class="icon-note"></i> Edit data siswa dengan nis : '+nis);	
+ 				$('#v_id_nilai').val(json.id_nilai);
+ 				$('#v_nis').val(json.nis);
  				$('#v_pengetahuan').val(json.nilai_pengetahuan);
  				$('#v_keterampilan').val(json.nilai_keterampilan);
  				$('#v_sikap').val(json.nilai_sikap);
-
  			},
  			error: function(data){
- 				console.log(data);
+ 				//console.log(data);
  			}
  		});
  	}

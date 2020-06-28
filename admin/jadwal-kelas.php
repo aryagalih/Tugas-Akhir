@@ -1,12 +1,14 @@
 <?php 
-	require_once('partials/header.php');
+    require_once('partials/header.php');
  ?>
  <?php
-	$query_kelas = mysqli_query($conn, "SELECT * FROM tb_kelas"); 
+    $query_kelas = mysqli_query($conn, "SELECT * FROM tb_kelas"); 
     $v_kelas="";
     if (isset($_POST['search'])) {
         $v_kelas = $_POST['v_kelas'];
     } 
+
+    $query_jadwal = mysqli_query($conn, "SELECT * FROM tb_jadwal join tb_matpel on tb_jadwal.id_matpel = tb_matpel.id_matpel");
  ?>
 <div class="clearfix"></div>
 <div class="content-wrapper">
@@ -37,7 +39,7 @@
           </div>
         </div>
         <div class="row">
-			<div class="col">
+            <div class="col">
                 <div class="card">
                     <div class="card-body">
                          <ul class="nav nav-tabs nav-tabs-primary top-icon nav-justified">
@@ -56,26 +58,43 @@
                         </ul>
                         <div class="tab-content">
                             <div class="tab-pane active" id="tambah">
-                                <div class="card-body">
-                                    <h5 align="center">Pilih Siswa Untuk Di tambahkan Ke Jadwal Kelas</h5>
-                                    <div class="form-group row">
-                                        <label for="kelas" class="col-md-2 col-form-label form-control-label"> Pilih Kelas : </label>
-                                        <div class="col-md-8">
-                                            <select name="v_kelas" id="v_kelas" required class="form-control">
-                                                <option value="" disabled="" selected="">Pilih Kelas</option>
-                                                <?php 
-                                                    while($data_kelas = mysqli_fetch_array($query_kelas)){
-                                                        echo "<option value='".$data_kelas['id_kelas']."'>".$data_kelas['nama']."</option>";
-                                                    }
-                                                ?>
-                                            </select>
+                                <form action="jadwalKelas/proses-gabung-kelas.php" method="POST" enctype="multipart/form-data">
+                                    <div class="card-body">
+                                        <h5 align="center">Pilih Matpel yang telah terjadwal</h5>
+                                        <div class="form-group row">
+                                            <label for="kelas" class="col-md-2 col-form-label form-control-label"> Pilih Jadwal : </label>
+                                            <div class="col-md-12">
+                                                <select name="v_jadwal" required class="form-control">
+                                                    <option value="" disabled="" selected="">Pilih Jadwal</option>
+                                                    <?php 
+                                                         while($data_jadwal = mysqli_fetch_array($query_jadwal)){
+                                                            echo "<option value='".$data_jadwal['id_jadwal']."'>".$data_jadwal['nama_matpel']."</option>";
+                                                        }
+                                                    ?>
+                                                </select>
+                                            </div>
                                         </div>
-                                        <div class="col-md-2">
-                                            <button id="search" name="search" class="btn btn-primary"><i class="fa fa-search"></i> Pilih</button>
+                                        <h5 align="center">Pilih Siswa Untuk Di tambahkan Ke Jadwal Kelas</h5>
+                                        <div class="form-group row">
+                                            <label for="kelas" class="col-md-2 col-form-label form-control-label"> Pilih Kelas : </label>
+                                            <div class="col-md-8">
+                                                <select name="v_kelas" id="v_kelas" required class="form-control">
+                                                    <option value="" disabled="" selected="">Pilih Kelas</option>
+                                                    <?php 
+                                                        while($data_kelas = mysqli_fetch_array($query_kelas)){
+                                                            echo "<option value='".$data_kelas['id_kelas']."'>".$data_kelas['nama']."</option>";
+                                                        }
+                                                    ?>
+                                                </select>
+                                            </div>
+                                            <div class="col-md-2">
+                                                <button id="search" name="search" class="btn btn-primary"><i class="fa fa-search"></i> Pilih</button>
+                                            </div>
                                         </div>
+                                        <br/>
+                                         <div class="data"></div>
                                     </div>
-                                     <div class="data"></div>
-                                </div>
+                                </form>
                             </div>
                             <div class="tab-pane" id="lihat1">
                                 <div class="card-body">
@@ -186,7 +205,8 @@
     $(document).ready(function(){
         $('.data').load("data.php");
         
-        $("#search").click(function(){
+        $("#search").click(function(e){
+            e.preventDefault();
             var kelas = $("#v_kelas").val();
             $.ajax({
                 type: 'POST',
