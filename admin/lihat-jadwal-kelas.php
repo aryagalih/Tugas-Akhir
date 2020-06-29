@@ -1,6 +1,10 @@
 <?php 
 	require_once('partials/header.php');
  ?>
+ <?php 
+    $query_kelas = mysqli_query($conn, "SELECT * FROM tb_jadwal"); 
+    $query_kelas = mysqli_query($conn, "SELECT * FROM tb_detail_jadwal"); 
+  ?>
 <div class="clearfix"></div>
 <div class="content-wrapper">
     <div class="container-fluid"><br> 
@@ -41,48 +45,170 @@
                                 					<td>Jam Pelajaran</td>
                                 					<td>Mata Pelajaran</td>
                                 					<td>Guru Pengajar</td>
+                                                    <td style="width: 5px;">Opsi</td>
                                 				</tr>
                                 			</thead>
                                 			<tbody>
-                                				<tr>
-                                					<td>07.00-07.40</td>
-                                					<td>Bahasa Indonesia</td>
-                                					<td>Arya Galih Ramdani</td>
-                                				</tr>
-                                				<tr>
-                                					<td>07.40-08.20</td>
-                                					<td>Bahasa Inggris</td>
-                                					<td>Galih</td>
-                                				</tr>
-                                				<tr>
-                                					<td>08.20-09.00</td>
-                                					<td>Seni budaya</td>
-                                					<td>Dani</td>
-                                				</tr>
-                                				<tr>
-                                					<td colspan="4" align="center">Istirahat</td>
-                                				</tr>
-                                				<tr>
-                                					<td>09.00-09.40</td>
-                                					<td>Bahasa Indonesia</td>
-                                					<td>Ramdani</td>
-                                				</tr>
-                                				<tr>
-                                					<td>09.40-10.20</td>
-                                					<td>Bahasa Inggris</td>
-                                					<td>Arya</td>
-                                				</tr>
-                                				<tr>
-                                					<td>10.20-11.00</td>
-                                					<td>Seni budaya</td>
-                                					<td>Adit</td>
-                                				</tr>
-                                				<tr>
-                                					<td colspan="4" align="center">Istirahat</td>
-                                				</tr>
+                                				<?php 
+                                                    include('config.php');
+                                                    $kelas = $_GET['id_kelas'];
+                                                    $sql = "SELECT * from tb_jadwal where id_kelas = '$kelas' and hari = '1'";
+                                                    $query= mysqli_query($conn, $sql); 
+                                                while($jadwal = mysqli_fetch_array($query)){
+                                                    echo "<tr>";
+                                                        echo "<td>".$jadwal['jam_pelajaran']. "</td>";
+                                                        echo "<td>".$jadwal['id_matpel']. "</td>";
+                                                        echo "<td>".$jadwal['nip']. "</td>";
+                                                        echo "<td>
+                                                                <a href='#' class='btn btn-warning' title='Hapus' onclick='editSiswa(this)'><i class='icon-trash'></i></a>
+                                                            </td>"; 
+                                                    echo "</tr>";
+                                                 }
+
+                                                 ?>
                                 			</tbody>
                                 		</table>
                                 	</div>
+                                </div>
+                            </div>
+                            <div class="tab-pane" id="selasa">
+                                <div class="card-body">
+                                    <div class="table-responsive">
+                                        <table class="table">
+                                            <thead align="center" style="font-size: 17px;">
+                                                <tr>
+                                                    <td>Jam Pelajaran</td>
+                                                    <td>Mata Pelajaran</td>
+                                                    <td>Guru Pengajar</td>
+                                                    <td style="width: 5px;">Opsi</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <?php 
+                                                    include('config.php');
+                                                    $kelas = $_GET['id_kelas'];
+                                                    $sql = "SELECT * from tb_jadwal where id_kelas = '$kelas' and hari = '2'";
+                                                    $query= mysqli_query($conn, $sql); 
+                                                while($jadwal = mysqli_fetch_array($query)){
+                                                    echo "<tr>";
+                                                        echo "<td>".$jadwal['jam_pelajaran']. "</td>";
+                                                        echo "<td>".$jadwal['id_matpel']. "</td>";
+                                                        echo "<td>".$jadwal['nip']. "</td>";
+                                                        echo "<td>
+                                                                <a href='#' class='btn btn-warning' title='Hapus' onclick='editSiswa(this)'><i class='icon-trash'></i></a>
+                                                            </td>"; 
+                                                    echo "</tr>";
+                                                 }
+
+                                                 ?>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane" id="rabu">
+                                <div class="card-body">
+                                    <div class="table-responsive">
+                                        <table class="table">
+                                            <thead align="center" style="font-size: 17px;">
+                                                <tr>
+                                                    <td>Jam Pelajaran</td>
+                                                    <td>Mata Pelajaran</td>
+                                                    <td>Guru Pengajar</td>
+                                                    <td style="width: 5px;">Opsi</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <?php 
+                                                    include('config.php');
+                                                    $kelas = $_GET['id_kelas'];
+                                                    $sql = "SELECT * from tb_jadwal where id_kelas = '$kelas' and hari = '3'";
+                                                    $query= mysqli_query($conn, $sql); 
+                                                while($jadwal = mysqli_fetch_array($query)){
+                                                    echo "<tr>";
+                                                        echo "<td>".$jadwal['jam_pelajaran']. "</td>";
+                                                        echo "<td>".$jadwal['id_matpel']. "</td>";
+                                                        echo "<td>".$jadwal['nip']. "</td>";
+                                                        echo "<td>
+                                                                <a href='#' class='btn btn-warning' title='Hapus' onclick='editSiswa(this)'><i class='icon-trash'></i></a>
+                                                            </td>"; 
+                                                    echo "</tr>";
+                                                 }
+
+                                                 ?>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane" id="kamis">
+                                <div class="card-body">
+                                    <div class="table-responsive">
+                                        <table class="table">
+                                            <thead align="center" style="font-size: 17px;">
+                                                <tr>
+                                                    <td>Jam Pelajaran</td>
+                                                    <td>Mata Pelajaran</td>
+                                                    <td>Guru Pengajar</td>
+                                                    <td style="width: 5px;">Opsi</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <?php 
+                                                    include('config.php');
+                                                    $kelas = $_GET['id_kelas'];
+                                                    $sql = "SELECT * from tb_jadwal where id_kelas = '$kelas' and hari = '4'";
+                                                    $query= mysqli_query($conn, $sql); 
+                                                while($jadwal = mysqli_fetch_array($query)){
+                                                    echo "<tr>";
+                                                        echo "<td>".$jadwal['jam_pelajaran']. "</td>";
+                                                        echo "<td>".$jadwal['id_matpel']. "</td>";
+                                                        echo "<td>".$jadwal['nip']. "</td>";
+                                                        echo "<td>
+                                                                <a href='#' class='btn btn-warning' title='Hapus' onclick='editSiswa(this)'><i class='icon-trash'></i></a>
+                                                            </td>"; 
+                                                    echo "</tr>";
+                                                 }
+
+                                                 ?>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane" id="jumat">
+                                <div class="card-body">
+                                    <div class="table-responsive">
+                                        <table class="table">
+                                            <thead align="center" style="font-size: 17px;">
+                                                <tr>
+                                                    <td>Jam Pelajaran</td>
+                                                    <td>Mata Pelajaran</td>
+                                                    <td>Guru Pengajar</td>
+                                                    <td style="width: 5px;">Opsi</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <?php 
+                                                    include('config.php');
+                                                    $kelas = $_GET['id_kelas'];
+                                                    $sql = "SELECT * from tb_jadwal where id_kelas = '$kelas' and hari = '5'";
+                                                    $query= mysqli_query($conn, $sql); 
+                                                while($jadwal = mysqli_fetch_array($query)){
+                                                    echo "<tr>";
+                                                        echo "<td>".$jadwal['jam_pelajaran']. "</td>";
+                                                        echo "<td>".$jadwal['id_matpel']. "</td>";
+                                                        echo "<td>".$jadwal['nip']. "</td>";
+                                                        echo "<td>
+                                                                <a href='#' class='btn btn-warning' title='Hapus' onclick='editSiswa(this)'><i class='icon-trash'></i></a>
+                                                            </td>"; 
+                                                    echo "</tr>";
+                                                 }
+
+                                                 ?>
+                                            </tbody>
+                                        </table>
+                                    </div>
                                 </div>
                             </div>
                         </div>

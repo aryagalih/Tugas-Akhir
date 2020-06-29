@@ -74,12 +74,11 @@
                                                 </select>
                                             </div>
                                         </div>
-                                        <h5 align="center">Pilih Siswa Untuk Di tambahkan Ke Jadwal Kelas</h5>
                                         <div class="form-group row">
                                             <label for="kelas" class="col-md-2 col-form-label form-control-label"> Pilih Kelas : </label>
                                             <div class="col-md-8">
                                                 <select name="v_kelas" id="v_kelas" required class="form-control">
-                                                    <option value="" disabled="" selected="">Pilih Kelas</option>
+                                                    <option value="" disabled="" selected="">Pilih Kelas & pilih siswa untuk digabungkan ke jadwal kelas</option>
                                                     <?php 
                                                         while($data_kelas = mysqli_fetch_array($query_kelas)){
                                                             echo "<option value='".$data_kelas['id_kelas']."'>".$data_kelas['nama']."</option>";
@@ -118,7 +117,7 @@
                                                         echo "<td>".$n++."</td>";
                                                         echo "<td>".$kelas['nama']. "</td>";
                                                         echo "<td>
-                                                                <a href='lihat-jadwal-kelas.php' class='btn btn-primary' title='".$kelas['id_kelas']."' onclick='editKelas(this)'><i class='icon-eye'></i></a>
+                                                                <a href='lihat-jadwal-kelas.php?id_kelas=".$kelas['id_kelas']."' class='btn btn-primary' title='".$kelas['id_kelas']."' onclick='editKelas(this)'><i class='icon-eye'></i></a>
                                                             </td>";
                                                         echo "</tr>";
                                                     }
