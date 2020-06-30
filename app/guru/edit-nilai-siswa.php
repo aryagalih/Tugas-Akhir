@@ -62,6 +62,7 @@
 											echo "<td>".$nilai['nama']. "</td>";
 											echo "<td>
 													<a href='#' class='btn btn-primary' title='".$nilai['nis']."' onclick='editSiswa(this)'><i class='icon-note'></i></a>
+													<a href='#' class='btn btn-warning text-white' title='".$nilai['id']."' onclick='hapus(this)'><i class='icon-trash'></i></a>
 												</td>";	
 									 	echo "</tr>";
 									 }
@@ -90,6 +91,8 @@
         		<input type="hidden" value="<?= $_GET['id_matpel']; ?>" name="id_matpel">
         		<input type="hidden" id="v_id_nilai" name="id_nilai">
         		<input type="hidden" id="v_nis" name="nis">
+        		<input type="hidden" id="v_nis" name="nis">
+        		<input type="hidden" id="v_id" name="id">
         		<div class="form-group row">
         			<div class="col-md-4">
         				<label>Nilai Pengetahuan :</label>
@@ -121,6 +124,32 @@
         	</div>
         </form>
       </div>
+     </div>
+ </div>
+
+ 	<div class="modal fade" id="hapusModal">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h4 class="modal-title">HAPUS DATA SISWA</h4>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+			          <span aria-hidden="true">&times;</span>
+			        </button>
+				</div>
+				<div class="modal-body">
+					<div class="text-center">YAKIN MENGHAPUS DATA SISWA ?</div>
+					<br><br>
+					<div class="pull-right">
+						<form action="kelola-nilai/hapus-nilai.php" method="POST">
+							<input type="hidden" name="id" id="del_id" value="">
+							<button type="button" class="btn btn-primary" data-dismiss="modal">Batalkan</button>
+							<button type="submit" class="btn btn-warning text-white">Hapus</button>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 </section>
  <?php 
  	require_once('partials/footer.php');
@@ -139,6 +168,7 @@
  				//console.log(data);
  				var json = JSON.parse(data);
  				$('#e_nis').html('<i class="icon-note"></i> Edit data siswa dengan nis : '+nis);	
+ 				$('#v_id').val(json.id);
  				$('#v_id_nilai').val(json.id_nilai);
  				$('#v_nis').val(json.nis);
  				$('#v_pengetahuan').val(json.nilai_pengetahuan);
@@ -149,5 +179,11 @@
  				//console.log(data);
  			}
  		});
+ 	}
+
+ 	function hapus(obj){
+ 		var id = $(obj).attr('title');
+ 		$('#hapusModal').modal('show');
+ 		$('#del_id').val(id);
  	}
   </script>

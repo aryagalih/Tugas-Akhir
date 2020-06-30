@@ -79,7 +79,7 @@
 	                                                  		echo "<td>".$n++."</td>";
 	                                                  		echo "<td>".$kelas['nama']. "</td>";
 	                                                  		echo "<td>
-                                                            <a href='pilih-matpel.php' class='btn btn-info text-white' title='Lihat Nilai' onclick='hapusKelas(this)'><i class='icon-eye'></i></a>
+                                                            <a href='pilih-matpel.php' class='btn btn-info text-white' title='Lihat Nilai'><i class='icon-eye'></i></a>
 	                                                    		</td>";
 	                                                  		echo "</tr>";
 	                                                	}

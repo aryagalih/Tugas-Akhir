@@ -20,7 +20,7 @@
                     <div class="card-body">
                     	<ul class="nav nav-tabs nav-tabs-primary top-icon nav-justified">
                             <li class="nav-item">
-                                <a href="javascript:void();" data-target="#senins" data-toggle="pill" class="nav-link active"><i class="zmdi zmdi-format-list-bulleted"></i> <span class="hidden-xs">Senin</span></a>
+                                <a href="javascript:void();" data-target="#senin" data-toggle="pill" class="nav-link active"><i class="zmdi zmdi-format-list-bulleted"></i> <span class="hidden-xs">Senin</span></a>
                             </li>
                             <li class="nav-item">
                                 <a href="javascript:void();" data-target="#selasa" data-toggle="pill" class="nav-link"><i class="zmdi zmdi-format-list-bulleted"></i> <span class="hidden-xs">Selasa</span></a>
@@ -60,7 +60,7 @@
                                                         echo "<td>".$jadwal['id_matpel']. "</td>";
                                                         echo "<td>".$jadwal['nip']. "</td>";
                                                         echo "<td>
-                                                                <a href='#' class='btn btn-warning' title='Hapus' onclick='editSiswa(this)'><i class='icon-trash'></i></a>
+                                                                <a href='#' class='btn btn-warning' title='Hapus' onclick='hapus(this)'><i class='icon-trash'></i></a>
                                                             </td>"; 
                                                     echo "</tr>";
                                                  }
@@ -212,6 +212,45 @@
                                 </div>
                             </div>
                         </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="hapusModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">HAPUS DATA SISWA</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="text-center">YAKIN MENGHAPUS DATA SISWA ?</div>
+                <br><br>
+                <div class="pull-right">
+                    <form action="jadwalKelas/proses-hapus-jadwal-kelas.php" method="POST">
+                        <input type="hidden" name="id" id="del_id" value="">
+                        <input type="hidden" name="id_kelas" id="id_kelas" value="">
+                        <button type="button" class="btn btn-primary" data-dismiss="modal">Batalkan</button>
+                        <button type="submit" class="btn btn-warning text-white">Hapus</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
  <?php 
 	require_once('partials/footer.php');
  ?>
+ <script>
+     function hapus(obj){
+        var id = $(obj).attr('title');
+        $('#hapusModal').modal('show');
+        $('#del_id').val(id);
+    }
+ </script>

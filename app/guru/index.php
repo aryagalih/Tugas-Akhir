@@ -85,10 +85,4 @@
 <?php 
   require_once('partials/footer.php');
  ?>
- <!-- SELECT 
-tb_jadwal.*, tb_guru.nama , tb_matpel.nama_matpel, tb_kelas.nama
-FROM `tb_jadwal` 
-JOIN tb_guru ON tb_jadwal.nip = tb_guru.nip  
-JOIN tb_matpel ON tb_matpel.id_matpel = tb_jadwal.id_matpel
-JOIN tb_kelas ON tb_kelas.id_kelas = tb_jadwal.id_kelas
-WHERE  tb_jadwal.id_kelas=30     -->
+ <!-- SELECT tb_jadwal.*, tb_guru.nama , tb_matpel.nama_matpel, tb_kelas.nama FROM `tb_jadwal` JOIN tb_guru ON tb_jadwal.nip = tb_guru.nip JOIN tb_matpel ON tb_matpel.id_matpel = tb_jadwal.id_matpel JOIN tb_kelas ON tb_kelas.id_kelas = tb_jadwal.id_kelas WHERE  tb_jadwal.id_kelas=30     -->

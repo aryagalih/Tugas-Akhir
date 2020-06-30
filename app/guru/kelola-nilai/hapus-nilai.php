@@ -1,14 +1,13 @@
 <?php
 include("../config.php");
 
-$nis = $_POST['nis'];
-$sql = "DELETE from tb_siswa where nis=$nis";
+$id = $_POST['id'];
+$sql = "DELETE from tb_detail_penilaian where id='$id'";
 $conn->query($sql);
 echo $conn->error;
 if($conn->query($sql) == TRUE){
-	header('Location: ../siswa.php?system_message=sukses');	
+	header('Location: ../edit-nilai-siswa.php?system_message=sukses');	
 }else{
-	// echo $conn->error;
 	header('Location: ../siswa.php?system_message=gagal&reason='.$conn->error);
 }	
 ?>

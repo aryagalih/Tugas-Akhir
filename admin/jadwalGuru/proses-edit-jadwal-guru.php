@@ -19,7 +19,7 @@ if(isset($_POST['simpan'])){
 		header('Location: ../edit_jadwal_guru.php?system_message=sukses');	
 	}else{
 		echo $conn->error;
-		// header('Location: ../edit_jadwal_guru.php?system_message=gagal&reason='.$conn->error);
+		header('Location: ../edit_jadwal_guru.php?system_message=gagal&reason='.$conn->error);
 	}
 }
 ?>
