@@ -52,13 +52,13 @@
                                 				<?php 
                                                     include('config.php');
                                                     $kelas = $_GET['id_kelas'];
-                                                    $sql = "SELECT * from tb_jadwal where id_kelas = '$kelas' and hari = '1'";
+                                                    $sql = "SELECT tb_jadwal.*, tb_guru.nama , tb_matpel.nama_matpel, tb_guru.nama FROM `tb_jadwal` JOIN tb_guru ON tb_jadwal.nip = tb_guru.nip JOIN tb_matpel ON tb_matpel.id_matpel = tb_jadwal.id_matpel JOIN tb_kelas ON tb_kelas.id_kelas = tb_jadwal.id_kelas where tb_kelas.id_kelas='".$kelas."' and hari='1'";
                                                     $query= mysqli_query($conn, $sql); 
                                                 while($jadwal = mysqli_fetch_array($query)){
                                                     echo "<tr>";
                                                         echo "<td>".$jadwal['jam_pelajaran']. "</td>";
-                                                        echo "<td>".$jadwal['id_matpel']. "</td>";
-                                                        echo "<td>".$jadwal['nip']. "</td>";
+                                                        echo "<td>".$jadwal['nama_matpel']. "</td>";
+                                                        echo "<td>".$jadwal['nama']. "</td>";
                                                         echo "<td>
                                                                 <a href='#' class='btn btn-warning' title='Hapus' onclick='hapus(this)'><i class='icon-trash'></i></a>
                                                             </td>"; 
@@ -87,13 +87,13 @@
                                                 <?php 
                                                     include('config.php');
                                                     $kelas = $_GET['id_kelas'];
-                                                    $sql = "SELECT * from tb_jadwal where id_kelas = '$kelas' and hari = '2'";
+                                                    $sql = "SELECT tb_jadwal.*, tb_guru.nama , tb_matpel.nama_matpel, tb_guru.nama FROM `tb_jadwal` JOIN tb_guru ON tb_jadwal.nip = tb_guru.nip JOIN tb_matpel ON tb_matpel.id_matpel = tb_jadwal.id_matpel JOIN tb_kelas ON tb_kelas.id_kelas = tb_jadwal.id_kelas where tb_kelas.id_kelas='".$kelas."' and hari='2'";
                                                     $query= mysqli_query($conn, $sql); 
                                                 while($jadwal = mysqli_fetch_array($query)){
                                                     echo "<tr>";
                                                         echo "<td>".$jadwal['jam_pelajaran']. "</td>";
-                                                        echo "<td>".$jadwal['id_matpel']. "</td>";
-                                                        echo "<td>".$jadwal['nip']. "</td>";
+                                                        echo "<td>".$jadwal['nama_matpel']. "</td>";
+                                                        echo "<td>".$jadwal['nama']. "</td>";
                                                         echo "<td>
                                                                 <a href='#' class='btn btn-warning' title='Hapus' onclick='editSiswa(this)'><i class='icon-trash'></i></a>
                                                             </td>"; 
@@ -122,13 +122,13 @@
                                                 <?php 
                                                     include('config.php');
                                                     $kelas = $_GET['id_kelas'];
-                                                    $sql = "SELECT * from tb_jadwal where id_kelas = '$kelas' and hari = '3'";
+                                                    $sql = "SELECT tb_jadwal.*, tb_guru.nama , tb_matpel.nama_matpel, tb_guru.nama FROM `tb_jadwal` JOIN tb_guru ON tb_jadwal.nip = tb_guru.nip JOIN tb_matpel ON tb_matpel.id_matpel = tb_jadwal.id_matpel JOIN tb_kelas ON tb_kelas.id_kelas = tb_jadwal.id_kelas where tb_kelas.id_kelas='".$kelas."' and hari='3'";
                                                     $query= mysqli_query($conn, $sql); 
                                                 while($jadwal = mysqli_fetch_array($query)){
                                                     echo "<tr>";
                                                         echo "<td>".$jadwal['jam_pelajaran']. "</td>";
-                                                        echo "<td>".$jadwal['id_matpel']. "</td>";
-                                                        echo "<td>".$jadwal['nip']. "</td>";
+                                                        echo "<td>".$jadwal['nama_matpel']. "</td>";
+                                                        echo "<td>".$jadwal['nama']. "</td>";
                                                         echo "<td>
                                                                 <a href='#' class='btn btn-warning' title='Hapus' onclick='editSiswa(this)'><i class='icon-trash'></i></a>
                                                             </td>"; 
@@ -157,13 +157,13 @@
                                                 <?php 
                                                     include('config.php');
                                                     $kelas = $_GET['id_kelas'];
-                                                    $sql = "SELECT * from tb_jadwal where id_kelas = '$kelas' and hari = '4'";
+                                                    $sql = "SELECT tb_jadwal.*, tb_guru.nama , tb_matpel.nama_matpel, tb_guru.nama FROM `tb_jadwal` JOIN tb_guru ON tb_jadwal.nip = tb_guru.nip JOIN tb_matpel ON tb_matpel.id_matpel = tb_jadwal.id_matpel JOIN tb_kelas ON tb_kelas.id_kelas = tb_jadwal.id_kelas where tb_kelas.id_kelas='".$kelas."' and hari='4'";
                                                     $query= mysqli_query($conn, $sql); 
                                                 while($jadwal = mysqli_fetch_array($query)){
                                                     echo "<tr>";
                                                         echo "<td>".$jadwal['jam_pelajaran']. "</td>";
-                                                        echo "<td>".$jadwal['id_matpel']. "</td>";
-                                                        echo "<td>".$jadwal['nip']. "</td>";
+                                                        echo "<td>".$jadwal['nama_matpel']. "</td>";
+                                                        echo "<td>".$jadwal['nama']. "</td>";
                                                         echo "<td>
                                                                 <a href='#' class='btn btn-warning' title='Hapus' onclick='editSiswa(this)'><i class='icon-trash'></i></a>
                                                             </td>"; 
@@ -192,13 +192,13 @@
                                                 <?php 
                                                     include('config.php');
                                                     $kelas = $_GET['id_kelas'];
-                                                    $sql = "SELECT * from tb_jadwal where id_kelas = '$kelas' and hari = '5'";
+                                                    $sql = "SELECT tb_jadwal.*, tb_guru.nama , tb_matpel.nama_matpel, tb_guru.nama FROM `tb_jadwal` JOIN tb_guru ON tb_jadwal.nip = tb_guru.nip JOIN tb_matpel ON tb_matpel.id_matpel = tb_jadwal.id_matpel JOIN tb_kelas ON tb_kelas.id_kelas = tb_jadwal.id_kelas where tb_kelas.id_kelas='".$kelas."' and hari='5'";
                                                     $query= mysqli_query($conn, $sql); 
                                                 while($jadwal = mysqli_fetch_array($query)){
                                                     echo "<tr>";
                                                         echo "<td>".$jadwal['jam_pelajaran']. "</td>";
-                                                        echo "<td>".$jadwal['id_matpel']. "</td>";
-                                                        echo "<td>".$jadwal['nip']. "</td>";
+                                                        echo "<td>".$jadwal['nama_matpel']. "</td>";
+                                                        echo "<td>".$jadwal['nama']. "</td>";
                                                         echo "<td>
                                                                 <a href='#' class='btn btn-warning' title='Hapus' onclick='editSiswa(this)'><i class='icon-trash'></i></a>
                                                             </td>"; 

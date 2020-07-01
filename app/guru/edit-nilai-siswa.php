@@ -62,7 +62,7 @@
 											echo "<td>".$nilai['nama']. "</td>";
 											echo "<td>
 													<a href='#' class='btn btn-primary' title='".$nilai['nis']."' onclick='editSiswa(this)'><i class='icon-note'></i></a>
-													<a href='#' class='btn btn-warning text-white' title='".$nilai['id']."' onclick='hapus(this)'><i class='icon-trash'></i></a>
+													<a href='#' class='btn btn-warning text-white' title='".$nilai['nis']."' onclick='hapus(this)'><i class='icon-trash'></i></a>
 												</td>";	
 									 	echo "</tr>";
 									 }
@@ -131,17 +131,17 @@
 		<div class="modal-dialog">
 			<div class="modal-content">
 				<div class="modal-header">
-					<h4 class="modal-title">HAPUS DATA SISWA</h4>
+					<h4 class="modal-title">HAPUS NILAI SISWA</h4>
 					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 			          <span aria-hidden="true">&times;</span>
 			        </button>
 				</div>
 				<div class="modal-body">
-					<div class="text-center">YAKIN MENGHAPUS DATA SISWA ?</div>
+					<div class="text-center">YAKIN INGIN MENGHAPUS NILAI SISWA ?</div>
 					<br><br>
 					<div class="pull-right">
 						<form action="kelola-nilai/hapus-nilai.php" method="POST">
-							<input type="hidden" name="id" id="del_id" value="">
+							<input type="hidden" name="nis" id="del_nid" value="">
 							<button type="button" class="btn btn-primary" data-dismiss="modal">Batalkan</button>
 							<button type="submit" class="btn btn-warning text-white">Hapus</button>
 						</form>
@@ -182,8 +182,8 @@
  	}
 
  	function hapus(obj){
- 		var id = $(obj).attr('title');
+ 		var nis = $(obj).attr('title');
  		$('#hapusModal').modal('show');
- 		$('#del_id').val(id);
+ 		$('#del_id').val(nis);
  	}
   </script>

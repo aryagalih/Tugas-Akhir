@@ -88,7 +88,7 @@
 						                  		<tbody>
 													<?php
 														$guru = $_GET['nip']; 
-														$sql = "SELECT tb_jadwal.*, tb_guru.nama , tb_matpel.nama_matpel, tb_kelas.nama FROM `tb_jadwal` JOIN tb_guru ON tb_jadwal.nip = tb_guru.nip JOIN tb_matpel ON tb_matpel.id_matpel = tb_jadwal.id_matpel JOIN tb_kelas ON tb_kelas.id_kelas = tb_jadwal.id_kelas where tb_jadwal.nip='".$guru."' 
+														$sql = "SELECT tb_jadwal.*, tb_guru.nama , tb_matpel.nama_matpel, tb_kelas.nama FROM `tb_jadwal` JOIN tb_guru ON tb_jadwal.nip = tb_guru.nip JOIN tb_matpel ON tb_matpel.id_matpel = tb_jadwal.id_matpel JOIN tb_kelas ON tb_kelas.id_kelas = tb_jadwal.id_kelas where tb_jadwal.nip='".$guru."' and hari='1' 
 														order by jam_pelajaran ASC";
 														$query= mysqli_query($conn, $sql);
 														while($jadwalGuru = mysqli_fetch_array($query)){
@@ -128,14 +128,14 @@
 						                  		<tbody>
 													<?php 
 														$guru = $_GET['nip'];
-														$sql = "SELECT * FROM tb_jadwal where (nip='$guru')&(hari='2') 
+														$sql = "SELECT tb_jadwal.*, tb_guru.nama , tb_matpel.nama_matpel, tb_kelas.nama FROM `tb_jadwal` JOIN tb_guru ON tb_jadwal.nip = tb_guru.nip JOIN tb_matpel ON tb_matpel.id_matpel = tb_jadwal.id_matpel JOIN tb_kelas ON tb_kelas.id_kelas = tb_jadwal.id_kelas where tb_jadwal.nip='".$guru."' and hari='2' 
 														order by jam_pelajaran ASC";
 														$query= mysqli_query($conn, $sql);
 														while($jadwalGuru = mysqli_fetch_array($query)){
 															echo "<tr>";
 																echo "<td>".$jadwalGuru['jam_pelajaran']."</td>";
-																echo "<td>".$jadwalGuru['id_matpel']."</td>";
-																echo "<td>".$jadwalGuru['id_kelas']."</td>";
+																echo "<td>".$jadwalGuru['nama_matpel']."</td>";
+																echo "<td>".$jadwalGuru['nama']."</td>";
 																echo "<td>
 																		<a href='#' class='btn btn-primary' title='".$jadwalGuru['id_jadwal']."' onclick='editJadwal(this)'><i class='icon-note'></i></a>
 																		<a href='#' class='btn btn-warning text-white' title='".$jadwalGuru['id_jadwal']."' onclick='hapusJadwal(this)'><i class='icon-trash'></i></a>
@@ -167,14 +167,15 @@
 							                  	</thead>
 						                  		<tbody>
 													<?php 
-														$sql = "SELECT * FROM tb_jadwal where (nip='$guru')&(hari='3') 
+														$guru = $_GET['nip'];
+														$sql = "SELECT tb_jadwal.*, tb_guru.nama , tb_matpel.nama_matpel, tb_kelas.nama FROM `tb_jadwal` JOIN tb_guru ON tb_jadwal.nip = tb_guru.nip JOIN tb_matpel ON tb_matpel.id_matpel = tb_jadwal.id_matpel JOIN tb_kelas ON tb_kelas.id_kelas = tb_jadwal.id_kelas where tb_jadwal.nip='".$guru."' and hari='3' 
 														order by jam_pelajaran ASC";
 														$query= mysqli_query($conn, $sql);
 														while($jadwalGuru = mysqli_fetch_array($query)){
 															echo "<tr>";
 																echo "<td>".$jadwalGuru['jam_pelajaran']."</td>";
-																echo "<td>".$jadwalGuru['id_matpel']."</td>";
-																echo "<td>".$jadwalGuru['id_kelas']."</td>";
+																echo "<td>".$jadwalGuru['nama_matpel']."</td>";
+																echo "<td>".$jadwalGuru['nama']."</td>";
 																echo "<td>
 																		<a href='#' class='btn btn-primary' title='".$jadwalGuru['id_jadwal']."' onclick='editJadwal(this)'><i class='icon-note'></i></a>
 																		<a href='#' class='btn btn-warning text-white' title='".$jadwalGuru['id_jadwal']."' onclick='hapusJadwal(this)'><i class='icon-trash'></i></a>
@@ -206,14 +207,15 @@
 							                  	</thead>
 						                  		<tbody>
 													<?php 
-														$sql = "SELECT * FROM tb_jadwal where (nip='$guru')&(hari='4') 
+														$guru = $_GET['nip'];
+														$sql = "SELECT tb_jadwal.*, tb_guru.nama , tb_matpel.nama_matpel, tb_kelas.nama FROM `tb_jadwal` JOIN tb_guru ON tb_jadwal.nip = tb_guru.nip JOIN tb_matpel ON tb_matpel.id_matpel = tb_jadwal.id_matpel JOIN tb_kelas ON tb_kelas.id_kelas = tb_jadwal.id_kelas where tb_jadwal.nip='".$guru."' and hari='4' 
 														order by jam_pelajaran ASC";
 														$query= mysqli_query($conn, $sql);
 														while($jadwalGuru = mysqli_fetch_array($query)){
 															echo "<tr>";
 																echo "<td>".$jadwalGuru['jam_pelajaran']."</td>";
-																echo "<td>".$jadwalGuru['id_matpel']."</td>";
-																echo "<td>".$jadwalGuru['id_kelas']."</td>";
+																echo "<td>".$jadwalGuru['nama_matpel']."</td>";
+																echo "<td>".$jadwalGuru['nama']."</td>";
 																echo "<td>
 																		<a href='#' class='btn btn-primary' title='".$jadwalGuru['id_jadwal']."' onclick='editJadwal(this)'><i class='icon-note'></i></a>
 																		<a href='#' class='btn btn-warning text-white' title='".$jadwalGuru['id_jadwal']."' onclick='hapusJadwal(this)'><i class='icon-trash'></i></a>
@@ -245,14 +247,15 @@
 							                  	</thead>
 						                  		<tbody>
 													<?php 
-														$sql = "SELECT * FROM tb_jadwal where (nip='$guru')&(hari='5') 
+														$guru = $_GET['nip'];
+														$sql = "SELECT tb_jadwal.*, tb_guru.nama , tb_matpel.nama_matpel, tb_kelas.nama FROM `tb_jadwal` JOIN tb_guru ON tb_jadwal.nip = tb_guru.nip JOIN tb_matpel ON tb_matpel.id_matpel = tb_jadwal.id_matpel JOIN tb_kelas ON tb_kelas.id_kelas = tb_jadwal.id_kelas where tb_jadwal.nip='".$guru."' and hari='5' 
 														order by jam_pelajaran ASC";
 														$query= mysqli_query($conn, $sql);
 														while($jadwalGuru = mysqli_fetch_array($query)){
 															echo "<tr>";
 																echo "<td>".$jadwalGuru['jam_pelajaran']."</td>";
-																echo "<td>".$jadwalGuru['id_matpel']."</td>";
-																echo "<td>".$jadwalGuru['id_kelas']."</td>";
+																echo "<td>".$jadwalGuru['nama_matpel']."</td>";
+																echo "<td>".$jadwalGuru['nama']."</td>";
 																echo "<td>
 																		<a href='#' class='btn btn-primary' title='".$jadwalGuru['id_jadwal']."' onclick='editJadwal(this)'><i class='icon-note'></i></a>
 																		<a href='#' class='btn btn-warning text-white' title='".$jadwalGuru['id_jadwal']."' onclick='hapusJadwal(this)'><i class='icon-trash'></i></a>

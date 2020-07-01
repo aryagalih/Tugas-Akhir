@@ -9,7 +9,7 @@ echo $conn->error;
 if($conn->query($sql) == TRUE){
 	header('Location: ../edit_jadwal_guru.php?system_message=sukses&nip='.$nip);	
 }else{
-	//echo $conn->error;
-	header('Location: ../edit_jadwal_guru.php?system_message=gagal&reason='.$conn->error);
+	echo $conn->error;
+	header('Location: ../edit_jadwal_guru.php?system_message=gagal&reason='.$conn->error.);
 }
 ?>

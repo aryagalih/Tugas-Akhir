@@ -16,5 +16,6 @@
 		header('Location: ../edit-nilai-siswa.php?id_matpel='.$id_matpel.'&bab='.$id_nilai.'&system_message=sukses');	
 	}else{
 		echo $conn->error;
+		header('Location: ../edit-nilai-siswa.php?system_message=gagal&reason='.$conn->error);
 	}
 ?>

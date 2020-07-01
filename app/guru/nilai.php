@@ -80,7 +80,6 @@
 	                                                  		echo "<td>
 	                                                      		<a href='tambah-nilai.php?id_kelas=".$kelas['id_kelas']."'' class='btn btn-primary' id='search' name='v_kelas' title='Tambah nilai' onclick='editKelas(this)'><i class='zmdi zmdi-collection-plus'></i></a>
 	                                                      		<a href='pilih-matpel.php?id_kelas=".$kelas['id_kelas']."' class='btn btn-warning text-white' title='Edit nilai' onclick='hapusKelas(this)'><i class='icon-note'></i></a>
-                                                            <a href='#' class='btn btn-primary text-white' title='Lihat Nilai' onclick='hapusKelas(this)'><i class='icon-eye'></i></a>
 	                                                    		</td>";
 	                                                  		echo "</tr>";
 	                                                	}
@@ -113,7 +112,6 @@
 	                                                		echo "<td>
 	                                                    			<a href='tambah-nilai.php?id_kelas=".$kelas['id_kelas']."'' class='btn btn-primary' id='search' name='v_kelas' title='Tambah nilai' onclick='editKelas(this)'><i class='zmdi zmdi-collection-plus'></i></a>
                                                             <a href='pilih-matpel.php?id_kelas=".$kelas['id_kelas']."'' class='btn btn-warning text-white' title='Edit nilai' onclick='hapusKelas(this)'><i class='icon-note'></i></a>
-                                                            <a href='pilih-matpel.php?id_kelas=".$kelas['id_kelas']."''  class='btn btn-primary text-white' title='Lihat Nilai' onclick='hapusKelas(this)'><i class='icon-eye'></i></a>
 		                                                  			</td>";
 	                                                		echo "</tr>";
 	                                              		}
@@ -146,7 +144,6 @@
                                                 			echo "<td>
                                                     				<a href='tambah-nilai.php?id_kelas=".$kelas['id_kelas']."'' class='btn btn-primary' id='search' name='v_kelas' title='Tambah nilai' onclick='editKelas(this)'><i class='zmdi zmdi-collection-plus'></i></a>
                                                             <a href='pilih-matpel.php' class='btn btn-warning text-white' title='Edit nilai' onclick='hapusKelas(this)'><i class='icon-note'></i></a>
-                                                            <a href='pilih-matpel.php?id_kelas=".$kelas['id_kelas']."'' class='btn btn-primary text-white' title='Lihat Nilai' onclick='hapusKelas(this)'><i class='icon-eye'></i></a>      
                                                   				</td>";
                                                 			echo "</tr>";
                                               			}
