@@ -52,7 +52,10 @@
                                 				<?php 
                                                     include('config.php');
                                                     $kelas = $_GET['id_kelas'];
-                                                    $sql = "SELECT tb_jadwal.*, tb_guru.nama , tb_matpel.nama_matpel, tb_guru.nama FROM `tb_jadwal` JOIN tb_guru ON tb_jadwal.nip = tb_guru.nip JOIN tb_matpel ON tb_matpel.id_matpel = tb_jadwal.id_matpel JOIN tb_kelas ON tb_kelas.id_kelas = tb_jadwal.id_kelas where tb_kelas.id_kelas='".$kelas."' and hari='1'";
+                                                    $sql = "SELECT tb_jadwal.*, tb_guru.nama , tb_matpel.nama_matpel, tb_guru.nama 
+                                                        FROM `tb_jadwal` JOIN tb_guru ON tb_jadwal.nip = tb_guru.nip 
+                                                        JOIN tb_matpel ON tb_matpel.id_matpel = tb_jadwal.id_matpel 
+                                                        JOIN tb_kelas ON tb_kelas.id_kelas = tb_jadwal.id_kelas where tb_kelas.id_kelas='".$kelas."' and hari='1'";
                                                     $query= mysqli_query($conn, $sql); 
                                                 while($jadwal = mysqli_fetch_array($query)){
                                                     echo "<tr>";
@@ -60,7 +63,7 @@
                                                         echo "<td>".$jadwal['nama_matpel']. "</td>";
                                                         echo "<td>".$jadwal['nama']. "</td>";
                                                         echo "<td>
-                                                                <a href='#' class='btn btn-warning' title='Hapus' onclick='hapus(this)'><i class='icon-trash'></i></a>
+                                                                <a href='#' class='btn btn-warning' title='".$jadwal['id_kelas']."' onclick='hapus(this)'><i class='icon-trash'></i></a>
                                                             </td>"; 
                                                     echo "</tr>";
                                                  }
@@ -86,7 +89,6 @@
                                             <tbody>
                                                 <?php 
                                                     include('config.php');
-                                                    $kelas = $_GET['id_kelas'];
                                                     $sql = "SELECT tb_jadwal.*, tb_guru.nama , tb_matpel.nama_matpel, tb_guru.nama FROM `tb_jadwal` JOIN tb_guru ON tb_jadwal.nip = tb_guru.nip JOIN tb_matpel ON tb_matpel.id_matpel = tb_jadwal.id_matpel JOIN tb_kelas ON tb_kelas.id_kelas = tb_jadwal.id_kelas where tb_kelas.id_kelas='".$kelas."' and hari='2'";
                                                     $query= mysqli_query($conn, $sql); 
                                                 while($jadwal = mysqli_fetch_array($query)){
@@ -95,7 +97,7 @@
                                                         echo "<td>".$jadwal['nama_matpel']. "</td>";
                                                         echo "<td>".$jadwal['nama']. "</td>";
                                                         echo "<td>
-                                                                <a href='#' class='btn btn-warning' title='Hapus' onclick='editSiswa(this)'><i class='icon-trash'></i></a>
+                                                                <a href='#' class='btn btn-warning' title='".$jadwal['id_kelas']."' onclick='hapus(this)'><i class='icon-trash'></i></a>
                                                             </td>"; 
                                                     echo "</tr>";
                                                  }
@@ -122,7 +124,7 @@
                                                 <?php 
                                                     include('config.php');
                                                     $kelas = $_GET['id_kelas'];
-                                                    $sql = "SELECT tb_jadwal.*, tb_guru.nama , tb_matpel.nama_matpel, tb_guru.nama FROM `tb_jadwal` JOIN tb_guru ON tb_jadwal.nip = tb_guru.nip JOIN tb_matpel ON tb_matpel.id_matpel = tb_jadwal.id_matpel JOIN tb_kelas ON tb_kelas.id_kelas = tb_jadwal.id_kelas where tb_kelas.id_kelas='".$kelas."' and hari='3'";
+                                                    $sql = "SELECT tb_detail_jadwal.*, tb_guru.nama , tb_matpel.nama_matpel, tb_guru.nama FROM `tb_jadwal` JOIN tb_guru ON tb_jadwal.nip = tb_guru.nip JOIN tb_matpel ON tb_matpel.id_matpel = tb_jadwal.id_matpel JOIN tb_kelas ON tb_kelas.id_kelas = tb_jadwal.id_kelas where tb_kelas.id_kelas='".$kelas."' and hari='3'";
                                                     $query= mysqli_query($conn, $sql); 
                                                 while($jadwal = mysqli_fetch_array($query)){
                                                     echo "<tr>";
@@ -130,7 +132,7 @@
                                                         echo "<td>".$jadwal['nama_matpel']. "</td>";
                                                         echo "<td>".$jadwal['nama']. "</td>";
                                                         echo "<td>
-                                                                <a href='#' class='btn btn-warning' title='Hapus' onclick='editSiswa(this)'><i class='icon-trash'></i></a>
+                                                                <a href='#' class='btn btn-warning' title='".$jadwal['id_kelas']."' onclick='hapus(this)'><i class='icon-trash'></i></a>
                                                             </td>"; 
                                                     echo "</tr>";
                                                  }
@@ -165,7 +167,7 @@
                                                         echo "<td>".$jadwal['nama_matpel']. "</td>";
                                                         echo "<td>".$jadwal['nama']. "</td>";
                                                         echo "<td>
-                                                                <a href='#' class='btn btn-warning' title='Hapus' onclick='editSiswa(this)'><i class='icon-trash'></i></a>
+                                                                <a href='#' class='btn btn-warning' title='".$jadwal['id_kelas']."' onclick='hapus(this)'><i class='icon-trash'></i></a>
                                                             </td>"; 
                                                     echo "</tr>";
                                                  }
@@ -200,7 +202,7 @@
                                                         echo "<td>".$jadwal['nama_matpel']. "</td>";
                                                         echo "<td>".$jadwal['nama']. "</td>";
                                                         echo "<td>
-                                                                <a href='#' class='btn btn-warning' title='Hapus' onclick='editSiswa(this)'><i class='icon-trash'></i></a>
+                                                                <a href='#' class='btn btn-warning' title='".$jadwal['id_jadwal']."' onclick='hapus(this)'><i class='icon-trash'></i></a>
                                                             </td>"; 
                                                     echo "</tr>";
                                                  }
@@ -223,18 +225,18 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h4 class="modal-title">HAPUS DATA SISWA</h4>
+                <h4 class="modal-title">HAPUS JADWAL KELAS</h4>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
-                <div class="text-center">YAKIN MENGHAPUS DATA SISWA ?</div>
-                <br><br>
+                <div class="text-center">YAKIN MENGHAPUS JADWAL KELAS <?= $_GET['id_kelas'];?>?</div>
+                <br>
                 <div class="pull-right">
                     <form action="jadwalKelas/proses-hapus-jadwal-kelas.php" method="POST">
-                        <input type="hidden" name="id" id="del_id" value="">
-                        <input type="hidden" name="id_kelas" id="id_kelas" value="">
+                        <input type="hidden" value="<?= $_GET['id']; ?>" name="id_matpel">
+                        <input type="hidden" name="id_kelas" id="del_id" value="">
                         <button type="button" class="btn btn-primary" data-dismiss="modal">Batalkan</button>
                         <button type="submit" class="btn btn-warning text-white">Hapus</button>
                     </form>
@@ -249,8 +251,8 @@
  ?>
  <script>
      function hapus(obj){
-        var id = $(obj).attr('title');
+        var id_kelas = $(obj).attr('title');
         $('#hapusModal').modal('show');
-        $('#del_id').val(id);
+        $('#del_id').val(id_kelas);
     }
  </script>

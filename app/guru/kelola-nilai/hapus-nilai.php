@@ -1,8 +1,10 @@
 <?php
 include("../config.php");
-$nis = $_POST['nis'];
+$nis = $_POST['del_id'];
+$id_matpel = $_POST['id_matpel'];
+$id_nilai = $_POST['id_nilai'];
 
-$sql = "DELETE from tb_detail_penilaian where nis='$nis'";
+$sql = "DELETE from tb_detail_penilaian where nis='$nis' and id_nilai=$id_nilai";
 $conn->query($sql);
 echo $conn->error;
 if($conn->query($sql) == TRUE){

@@ -36,7 +36,6 @@
 	                  		<tbody>
 	                  			<?php 
 	                  				$id_kelas = $_GET['id_kelas'];
-                                    // $sql = "SELECT tb_penilaian* FROM tb_penilaian join tb_matpel on tb_matpel.id_matpel = tb_penilaian.nama_matpel where id_kelas='$id_kelas'";
                                     $sql = "SELECT tb_penilaian.*, tb_matpel.nama_matpel  FROM `tb_penilaian` JOIN tb_matpel ON tb_matpel.id_matpel = tb_penilaian.id_matpel where tb_penilaian.id_kelas='".$id_kelas."'";
                                     $query= mysqli_query($conn, $sql);
                                     $n = 1;  

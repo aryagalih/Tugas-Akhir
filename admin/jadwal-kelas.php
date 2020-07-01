@@ -149,7 +149,7 @@
                                                         echo "<td>".$n++."</td>";
                                                         echo "<td>".$kelas['nama']. "</td>";
                                                         echo "<td>
-                                                                <a href='lihat-jadwal-kelas.php' class='btn btn-primary' title='".$kelas['id_kelas']."' onclick='editKelas(this)'><i class='icon-eye'></i></a>
+                                                                <a href='lihat-jadwal-kelas.php?id_kelas=".$kelas['id_kelas']."' class='btn btn-primary' title='".$kelas['id_kelas']."' onclick='editKelas(this)'><i class='icon-eye'></i></a>
                                                             </td>";
                                                         echo "</tr>";
                                                     }
@@ -180,7 +180,7 @@
                                                         echo "<td>".$n++."</td>";
                                                         echo "<td>".$kelas['nama']. "</td>";
                                                         echo "<td>
-                                                                <a href='lihat-jadwal-kelas.php' class='btn btn-primary' title='".$kelas['id_kelas']."' onclick='editKelas(this)'><i class='icon-eye'></i></a>
+                                                                <a href='lihat-jadwal-kelas.php?id_kelas=".$kelas['id_kelas']."' class='btn btn-primary' title='".$kelas['id_kelas']."' onclick='editKelas(this)'><i class='icon-eye'></i></a>
                                                             </td>";
                                                         echo "</tr>";
                                                     }

@@ -91,7 +91,6 @@
         		<input type="hidden" value="<?= $_GET['id_matpel']; ?>" name="id_matpel">
         		<input type="hidden" id="v_id_nilai" name="id_nilai">
         		<input type="hidden" id="v_nis" name="nis">
-        		<input type="hidden" id="v_nis" name="nis">
         		<input type="hidden" id="v_id" name="id">
         		<div class="form-group row">
         			<div class="col-md-4">
@@ -141,7 +140,9 @@
 					<br><br>
 					<div class="pull-right">
 						<form action="kelola-nilai/hapus-nilai.php" method="POST">
-							<input type="hidden" name="nis" id="del_nid" value="">
+							<input type="hidden" value="<?= $_GET['id_matpel']; ?>" name="id_matpel">
+							<input type="hidden" value="<?= $_GET['bab']; ?>" name="id_nilai">
+							<input type="hidden" name="del_id" id="del_id" value="">
 							<button type="button" class="btn btn-primary" data-dismiss="modal">Batalkan</button>
 							<button type="submit" class="btn btn-warning text-white">Hapus</button>
 						</form>
@@ -182,8 +183,8 @@
  	}
 
  	function hapus(obj){
- 		var nis = $(obj).attr('title');
+ 		var id = $(obj).attr('title');
  		$('#hapusModal').modal('show');
- 		$('#del_id').val(nis);
+ 		$('#del_id').val(id);
  	}
   </script>
