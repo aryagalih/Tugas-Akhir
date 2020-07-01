@@ -16,7 +16,18 @@
 	while ($datakelas = mysqli_fetch_assoc($query_kelas)) {
 		array_push($datakelass, $datakelas);
 	}
-
+$jampel = array(
+	"07:00 - 07:40",
+	"07:40 - 08:20",
+	"08:20 - 09:00",
+	"09:20 - 10:00",
+	"10:00 - 10:40",
+	"10:40 - 11:20",
+	"12:20 - 13:00",
+	"13:00 - 13:40",
+	"13:40 - 14:20",
+	"14:20 - 15:00",
+);
 
 ?>
 
@@ -90,8 +101,8 @@
 														$guru = $_GET['nip']; 
 														$sql = "SELECT tb_jadwal.*, tb_guru.nama , tb_matpel.nama_matpel, tb_kelas.nama FROM `tb_jadwal` JOIN tb_guru ON tb_jadwal.nip = tb_guru.nip JOIN tb_matpel ON tb_matpel.id_matpel = tb_jadwal.id_matpel JOIN tb_kelas ON tb_kelas.id_kelas = tb_jadwal.id_kelas where tb_jadwal.nip='".$guru."' and hari='1' 
 														order by jam_pelajaran ASC";
-														$query= mysqli_query($conn, $sql);
-														while($jadwalGuru = mysqli_fetch_array($query)){
+														$query1= mysqli_query($conn, $sql);
+														while($jadwalGuru = mysqli_fetch_array($query1)){
 															echo "<tr>";
 																echo "<td>".$jadwalGuru['jam_pelajaran']."</td>";
 																echo "<td>".$jadwalGuru['nama_matpel']."</td>";
@@ -250,7 +261,7 @@
 														$guru = $_GET['nip'];
 														$sql = "SELECT tb_jadwal.*, tb_guru.nama , tb_matpel.nama_matpel, tb_kelas.nama FROM `tb_jadwal` JOIN tb_guru ON tb_jadwal.nip = tb_guru.nip JOIN tb_matpel ON tb_matpel.id_matpel = tb_jadwal.id_matpel JOIN tb_kelas ON tb_kelas.id_kelas = tb_jadwal.id_kelas where tb_jadwal.nip='".$guru."' and hari='5' 
 														order by jam_pelajaran ASC";
-														$query= mysqli_query($conn, $sql);
+														$query= mysqli_query($conn, $sql); 
 														while($jadwalGuru = mysqli_fetch_array($query)){
 															echo "<tr>";
 																echo "<td>".$jadwalGuru['jam_pelajaran']."</td>";
@@ -298,20 +309,28 @@
 		        	<div class="form-group row">
 	                	<label for="nip" class="col-lg-2 col-form-label form-control-label">Jam Pelajaran</label>
 	                    <div class="col-lg-10">
+	                    	<?php
+	                    	$guru = $_GET['nip'];
+							$sql = "SELECT tb_jadwal.*, tb_guru.nama , tb_matpel.nama_matpel, tb_kelas.nama FROM `tb_jadwal` JOIN tb_guru ON tb_jadwal.nip = tb_guru.nip JOIN tb_matpel ON tb_matpel.id_matpel = tb_jadwal.id_matpel JOIN tb_kelas ON tb_kelas.id_kelas = tb_jadwal.id_kelas where tb_jadwal.nip='".$guru."' and hari='1' 
+							order by jam_pelajaran ASC";
+							$query= mysqli_query($conn, $sql);
+	                    	$jam1 = array();
+	                    	while($jadwalGuru = mysqli_fetch_array($query)){
+								array_push($jam1, $jadwalGuru['jam_pelajaran']);
+							}
+							
+	                    	?>
 	                         <select name="jam_pelajaran" class="form-control" required>
 	                        	<option value="" disabled="" selected="">Jam Pelajaran</option>
-	                        	<option value="07:00 - 07:40">07:00 - 07:40</option>
-	                        	<option value="07:40 - 08:20">07:40 - 08:20</option>
-	                        	<option value="08:20 - 09:00">08:20 - 09:00</option>
-	                        	<option value="istirahat">Istirahat</option>
-	                        	<option value="09:20 - 10:00">09:20 - 10:00</option>
-	                        	<option value="10:00 - 10:40">10:00 - 10:40</option>
-	                        	<option value="10:40 - 11:20">10:40 - 11:20</option>
-	                        	<option value="istirahat">Istirahat</option>
-	                        	<option value="12:20 - 13:00">12:20 - 13:00</option>
-	                        	<option value="13:00 - 13:40">13:00 - 13:40</option>
-	                        	<option value="13:40 - 14:20">13:40 - 14:20</option>
-	                        	<option value="14:20 - 15:00">14:20 - 15:00</option>
+	                        	<?php 
+	                        	$i=0;
+	                        	foreach ($jampel as $key => $value): ?>
+	                        		<?php if ($value != $jam1[$i]): ?>
+	                        			<option value="<?= @$value ?>"><?=$value?></option>}
+	                        		<?php else: ?>
+	                        			
+	                        		<?php endif ?>
+	                        	<?php $i++;endforeach ?>
 	                        </select>
 	                    </div>
 	                </div>
@@ -433,20 +452,27 @@
 		        	<div class="form-group row">
 	                	<label for="nip" class="col-lg-2 col-form-label form-control-label">Jam Pelajaran</label>
 	                    <div class="col-lg-10">
+	                    	<?php
+	                    	$guru = $_GET['nip'];
+							$sql = "SELECT tb_jadwal.*, tb_guru.nama , tb_matpel.nama_matpel, tb_kelas.nama FROM `tb_jadwal` JOIN tb_guru ON tb_jadwal.nip = tb_guru.nip JOIN tb_matpel ON tb_matpel.id_matpel = tb_jadwal.id_matpel JOIN tb_kelas ON tb_kelas.id_kelas = tb_jadwal.id_kelas where tb_jadwal.nip='".$guru."' and hari='2' 
+							order by jam_pelajaran ASC";
+							$query= mysqli_query($conn, $sql);
+	                    	$jam2 = array();
+	                    	while($jadwalGuru = mysqli_fetch_array($query)){
+								array_push($jam2, $jadwalGuru['jam_pelajaran']);
+							}
+	                    	?>
 	                         <select name="jam_pelajaran" class="form-control" required>
 	                        	<option value="" disabled="" selected="">Jam Pelajaran</option>
-	                        	<option value="07:00 - 07:40">07:00 - 07:40</option>
-	                        	<option value="07:40 - 08:20">07:40 - 08:20</option>
-	                        	<option value="08:20 - 09:00">08:20 - 09:00</option>
-	                        	<option value="istirahat">Istirahat</option>
-	                        	<option value="09:20 - 10:00">09:20 - 10:00</option>
-	                        	<option value="10:00 - 10:40">10:00 - 10:40</option>
-	                        	<option value="10:40 - 11:20">10:40 - 11:20</option>
-	                        	<option value="istirahat">Istirahat</option>
-	                        	<option value="12:20 - 13:00">12:20 - 13:00</option>
-	                        	<option value="13:00 - 13:40">13:00 - 13:40</option>
-	                        	<option value="13:40 - 14:20">13:40 - 14:20</option>
-	                        	<option value="14:20 - 15:00">14:20 - 15:00</option>
+	                        	<?php 
+	                        	$i=0;
+	                        	foreach ($jampel as $key => $value): ?>
+	                        		<?php if ($value != $jam2[$i]): ?>
+	                        			<option value="<?= @$value ?>"><?=$value?></option>}
+	                        		<?php else: ?>
+	                        			
+	                        		<?php endif ?>
+	                        	<?php $i++;endforeach ?>
 	                        </select>
 	                    </div>
 	                </div>
@@ -568,21 +594,28 @@
 		        	<div class="form-group row">
 	                	<label for="nip" class="col-lg-2 col-form-label form-control-label">Jam Pelajaran</label>
 	                    <div class="col-lg-10">
-	                         <select name="jam_pelajaran" class="form-control" required>
-	                        	<option value="" disabled="" selected="">Jam Pelajaran</option>
-	                        	<option value="07:00 - 07:40">07:00 - 07:40</option>
-	                        	<option value="07:40 - 08:20">07:40 - 08:20</option>
-	                        	<option value="08:20 - 09:00">08:20 - 09:00</option>
-	                        	<option value="istirahat">Istirahat</option>
-	                        	<option value="09:20 - 10:00">09:20 - 10:00</option>
-	                        	<option value="10:00 - 10:40">10:00 - 10:40</option>
-	                        	<option value="10:40 - 11:20">10:40 - 11:20</option>
-	                        	<option value="istirahat">Istirahat</option>
-	                        	<option value="12:20 - 13:00">12:20 - 13:00</option>
-	                        	<option value="13:00 - 13:40">13:00 - 13:40</option>
-	                        	<option value="13:40 - 14:20">13:40 - 14:20</option>
-	                        	<option value="14:20 - 15:00">14:20 - 15:00</option>
-	                        </select>
+	                    	<?php
+	                    	$guru = $_GET['nip'];
+								$sql = "SELECT tb_jadwal.*, tb_guru.nama , tb_matpel.nama_matpel, tb_kelas.nama FROM `tb_jadwal` JOIN tb_guru ON tb_jadwal.nip = tb_guru.nip JOIN tb_matpel ON tb_matpel.id_matpel = tb_jadwal.id_matpel JOIN tb_kelas ON tb_kelas.id_kelas = tb_jadwal.id_kelas where tb_jadwal.nip='".$guru."' and hari='3' 
+								order by jam_pelajaran ASC";
+								$query= mysqli_query($conn, $sql);
+		                    	$jam3 = array();
+		                    	while($jadwalGuru = mysqli_fetch_array($query)){
+									array_push($jam3, $jadwalGuru['jam_pelajaran']);
+								}
+		                    	?>
+		                         <select name="jam_pelajaran" class="form-control" required>
+		                        	<option value="" disabled="" selected="">Jam Pelajaran</option>
+		                        	<?php 
+		                        	$i=0;
+		                        	foreach ($jampel as $key => $value): ?>
+		                        		<?php if ($value != $jam3[$i]): ?>
+		                        			<option value="<?= @$value ?>"><?=$value?></option>}
+		                        		<?php else: ?>
+		                        			
+		                        		<?php endif ?>
+		                        	<?php $i++;endforeach ?>
+		                        </select>
 	                    </div>
 	                </div>
 	                <div class="form-group row">
@@ -703,20 +736,27 @@
 		        	<div class="form-group row">
 	                	<label for="nip" class="col-lg-2 col-form-label form-control-label">Jam Pelajaran</label>
 	                    <div class="col-lg-10">
+	                        <?php
+	                    	$guru = $_GET['nip'];
+							$sql = "SELECT tb_jadwal.*, tb_guru.nama , tb_matpel.nama_matpel, tb_kelas.nama FROM `tb_jadwal` JOIN tb_guru ON tb_jadwal.nip = tb_guru.nip JOIN tb_matpel ON tb_matpel.id_matpel = tb_jadwal.id_matpel JOIN tb_kelas ON tb_kelas.id_kelas = tb_jadwal.id_kelas where tb_jadwal.nip='".$guru."' and hari='4' 
+							order by jam_pelajaran ASC";
+							$query= mysqli_query($conn, $sql);
+	                    	$jam4 = array();
+	                    	while($jadwalGuru = mysqli_fetch_array($query)){
+								array_push($jam4, $jadwalGuru['jam_pelajaran']);
+							}
+	                    	?>
 	                         <select name="jam_pelajaran" class="form-control" required>
 	                        	<option value="" disabled="" selected="">Jam Pelajaran</option>
-	                        	<option value="07:00 - 07:40">07:00 - 07:40</option>
-	                        	<option value="07:40 - 08:20">07:40 - 08:20</option>
-	                        	<option value="08:20 - 09:00">08:20 - 09:00</option>
-	                        	<option value="istirahat">Istirahat</option>
-	                        	<option value="09:20 - 10:00">09:20 - 10:00</option>
-	                        	<option value="10:00 - 10:40">10:00 - 10:40</option>
-	                        	<option value="10:40 - 11:20">10:40 - 11:20</option>
-	                        	<option value="istirahat">Istirahat</option>
-	                        	<option value="12:20 - 13:00">12:20 - 13:00</option>
-	                        	<option value="13:00 - 13:40">13:00 - 13:40</option>
-	                        	<option value="13:40 - 14:20">13:40 - 14:20</option>
-	                        	<option value="14:20 - 15:00">14:20 - 15:00</option>
+	                        	<?php 
+	                        	$i=0;
+	                        	foreach ($jampel as $key => $value): ?>
+	                        		<?php if ($value != $jam4[$i]): ?>
+	                        			<option value="<?= @$value ?>"><?=$value?></option>}
+	                        		<?php else: ?>
+	                        			
+	                        		<?php endif ?>
+	                        	<?php $i++;endforeach ?>
 	                        </select>
 	                    </div>
 	                </div>
@@ -753,7 +793,7 @@
 	  </div>
 	</div>
 	
-	<!-- edit Rabu-->
+	<!-- edit kamis-->
 	 <div class="modal fade" id="editKamis" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 	  <div class="modal-dialog" role="document">
 	    <div class="modal-content">
@@ -838,20 +878,27 @@
 		        	<div class="form-group row">
 	                	<label for="nip" class="col-lg-2 col-form-label form-control-label">Jam Pelajaran</label>
 	                    <div class="col-lg-10">
+	                        <?php
+	                    	$guru = $_GET['nip'];
+							$sql = "SELECT tb_jadwal.*, tb_guru.nama , tb_matpel.nama_matpel, tb_kelas.nama FROM `tb_jadwal` JOIN tb_guru ON tb_jadwal.nip = tb_guru.nip JOIN tb_matpel ON tb_matpel.id_matpel = tb_jadwal.id_matpel JOIN tb_kelas ON tb_kelas.id_kelas = tb_jadwal.id_kelas where tb_jadwal.nip='".$guru."' and hari='5' 
+							order by jam_pelajaran ASC";
+							$query= mysqli_query($conn, $sql);
+	                    	$jam5 = array();
+	                    	while($jadwalGuru = mysqli_fetch_array($query)){
+								array_push($jam5, $jadwalGuru['jam_pelajaran']);
+							}
+	                    	?>
 	                         <select name="jam_pelajaran" class="form-control" required>
 	                        	<option value="" disabled="" selected="">Jam Pelajaran</option>
-	                        	<option value="07:00 - 07:40">07:00 - 07:40</option>
-	                        	<option value="07:40 - 08:20">07:40 - 08:20</option>
-	                        	<option value="08:20 - 09:00">08:20 - 09:00</option>
-	                        	<option value="istirahat">Istirahat</option>
-	                        	<option value="09:20 - 10:00">09:20 - 10:00</option>
-	                        	<option value="10:00 - 10:40">10:00 - 10:40</option>
-	                        	<option value="10:40 - 11:20">10:40 - 11:20</option>
-	                        	<option value="istirahat">Istirahat</option>
-	                        	<option value="12:20 - 13:00">12:20 - 13:00</option>
-	                        	<option value="13:00 - 13:40">13:00 - 13:40</option>
-	                        	<option value="13:40 - 14:20">13:40 - 14:20</option>
-	                        	<option value="14:20 - 15:00">14:20 - 15:00</option>
+	                        	<?php 
+	                        	$i=0;
+	                        	foreach ($jampel as $key => $value): ?>
+	                        		<?php if ($value != $jam5[$i]): ?>
+	                        			<option value="<?= @$value ?>"><?=$value?></option>}
+	                        		<?php else: ?>
+	                        			
+	                        		<?php endif ?>
+	                        	<?php $i++;endforeach ?>
 	                        </select>
 	                    </div>
 	                </div>

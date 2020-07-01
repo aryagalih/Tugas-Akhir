@@ -1,6 +1,10 @@
 <?php 
 	require_once('partials/header.php');
 ?>
+<?php 	
+	$query_kelas = mysqli_query($conn, "SELECT * FROM tb_kelas");
+	$query_matpel = mysqli_query($conn, "SELECT * FROM tb_matpel");
+?>
 <section>
 	<div class="clearfix"></div>	
     <div class="content-wrapper">
@@ -42,65 +46,19 @@
 					                    </tr>
 					                </thead>
 					                <tbody>
-					                   <!-- <?php 
-					                   		include 'config.php';
-							            	$n = 1;
-					                   		$sql = "SELECT * FROM tb_jadwal";
-					                   		$query = mysqli_query($conn, $sql);
-					                   		if($query){
+					                  	<?php
+											// $guru = $_GET['nip']; 
+											$sql = "SELECT tb_jadwal.*, tb_guru.nama , tb_matpel.nama_matpel, tb_kelas.nama FROM `tb_jadwal` JOIN tb_guru ON tb_jadwal.nip = tb_guru.nip JOIN tb_matpel ON tb_matpel.id_matpel = tb_jadwal.id_matpel JOIN tb_kelas ON tb_kelas.id_kelas = tb_jadwal.id_kelas where tb_jadwal.nip='981273' and hari='1' 
+											order by jam_pelajaran ASC";
+											$query= mysqli_query($conn, $sql);
 											while($jadwalGuru = mysqli_fetch_array($query)){
-											?>
-											<tr>
-												<td align="center"><?php echo $n++; ?></td>
-												<td align="center"><?php echo $jadwalGuru['jam_pelajaran']; ?></td>
-												<td><?php echo $jadwalGuru['id_matpel']; ?></td>
-												<td><?php echo $jadwalGuru['id_kelas']; ?></td>
-											</tr>
-											<?php
+												echo "<tr>";
+													echo "<td>".$jadwalGuru['jam_pelajaran']."</td>";
+													echo "<td>".$jadwalGuru['nama_matpel']."</td>";
+													echo "<td>".$jadwalGuru['nama']."</td>";
+											 	echo "</tr>";
 											}
-										}
-					                    ?> -->
-					                    <tr>
-					                    	<td>07.00-07.40</td>
-					                    	<td>Bahasa Indonesia</td>
-					                    	<td>7B</td>
-					                    </tr>
-					                     <tr>
-					                     	<td>07.40-08.20</td>
-					                     	<td>Bahasa Indonesia</td>
-					                     	<td>7A</td>
-					                    </tr>
-					                     <tr>
-					                     	<td>08.20-09.00</td>
-					                     	<td>Seni budaya</td>
-					                     	<td>7B</td>
-					                    </tr>
-					                    <tr>
-					                    	<td colspan="3" align="center">Istirahat</td>
-					                    </tr>
-					                    <tr>
-					                    	<td>07.00-07.40</td>
-					                    	<td>Bahasa Indonesia</td>
-					                    	<td>7C</td>
-					                    </tr>
-					                     <tr>
-					                     	<td>07.40-08.20</td>
-					                     	<td>Bahasa Indonesia</td>
-					                     	<td>7C</td>
-					                    </tr>
-					                     <tr>
-					                     	<td>08.20-09.00</td>
-					                     	<td>Seni budaya</td>
-					                     	<td>7A</td>
-					                    </tr>
-					                    <tr>
-					                    	<td colspan="3" align="center">Istirahat</td>
-					                    </tr>
-					                    <tr>
-					                     	<td>08.20-09.00</td>
-					                     	<td>Seni budaya</td>
-					                     	<td>7B</td>
-					                    </tr>
+										 ?>
 					                 </tbody>
 					            </table>
 					        </div>
@@ -110,19 +68,25 @@
 		            			<table class="table">
 		              				<thead align="center">
 		                				<tr>
-		                  					<th style="width: 50px;">NO.</th>
 		                  					<th>JAM PELAJARAN</th>
 		                  					<th>MATA PELAJARAN</th>
 					                      	<th>KELAS</th>
 					                    </tr>
 					                </thead>
 					                <tbody>
-					                    <tr>
-					                      	<th scope="row">1</th>
-					                      	<td></td>
-					                      	<td></td>
-					                      	<td></td>
-					                    </tr>
+					                  <?php
+											// $guru = $_GET['nip']; 
+											$sql = "SELECT tb_jadwal.*, tb_guru.nama , tb_matpel.nama_matpel, tb_kelas.nama FROM `tb_jadwal` JOIN tb_guru ON tb_jadwal.nip = tb_guru.nip JOIN tb_matpel ON tb_matpel.id_matpel = tb_jadwal.id_matpel JOIN tb_kelas ON tb_kelas.id_kelas = tb_jadwal.id_kelas where tb_jadwal.nip='981273' and hari='2' 
+											order by jam_pelajaran ASC";
+											$query= mysqli_query($conn, $sql);
+											while($jadwalGuru = mysqli_fetch_array($query)){
+												echo "<tr>";
+													echo "<td>".$jadwalGuru['jam_pelajaran']."</td>";
+													echo "<td>".$jadwalGuru['nama_matpel']."</td>";
+													echo "<td>".$jadwalGuru['nama']."</td>";
+											 	echo "</tr>";
+											}
+										 ?>
 					                 </tbody>
 					            </table>
 					        </div>
@@ -132,19 +96,25 @@
 		            			<table class="table">
 		              				<thead align="center">
 		                				<tr>
-		                  					<th style="width: 50px;">NO.</th>
 		                  					<th>JAM PELAJARAN</th>
 		                  					<th>MATA PELAJARAN</th>
 					                      	<th>KELAS</th>
 					                    </tr>
 					                </thead>
 					                <tbody>
-					                    <tr>
-					                      	<th scope="row">1</th>
-					                      	<td></td>
-					                      	<td></td>
-					                      	<td></td>
-					                    </tr>
+					                    <?php
+											// $guru = $_GET['nip']; 
+											$sql = "SELECT tb_jadwal.*, tb_guru.nama , tb_matpel.nama_matpel, tb_kelas.nama FROM `tb_jadwal` JOIN tb_guru ON tb_jadwal.nip = tb_guru.nip JOIN tb_matpel ON tb_matpel.id_matpel = tb_jadwal.id_matpel JOIN tb_kelas ON tb_kelas.id_kelas = tb_jadwal.id_kelas where tb_jadwal.nip='981273' and hari='3' 
+											order by jam_pelajaran ASC";
+											$query= mysqli_query($conn, $sql);
+											while($jadwalGuru = mysqli_fetch_array($query)){
+												echo "<tr>";
+													echo "<td>".$jadwalGuru['jam_pelajaran']."</td>";
+													echo "<td>".$jadwalGuru['nama_matpel']."</td>";
+													echo "<td>".$jadwalGuru['nama']."</td>";
+											 	echo "</tr>";
+											}
+										 ?>
 					                 </tbody>
 					            </table>
 					        </div>
@@ -154,19 +124,25 @@
 		            			<table class="table">
 		              				<thead align="center">
 		                				<tr>
-		                  					<th style="width: 50px;">NO.</th>
 		                  					<th>JAM PELAJARAN</th>
 		                  					<th>MATA PELAJARAN</th>
 					                      	<th>KELAS</th>
 					                    </tr>
 					                </thead>
 					                <tbody>
-					                    <tr>
-					                      	<th scope="row">1</th>
-					                      	<td></td>
-					                      	<td></td>
-					                      	<td></td>
-					                    </tr>
+					                    <?php
+											// $guru = $_GET['nip']; 
+											$sql = "SELECT tb_jadwal.*, tb_guru.nama , tb_matpel.nama_matpel, tb_kelas.nama FROM `tb_jadwal` JOIN tb_guru ON tb_jadwal.nip = tb_guru.nip JOIN tb_matpel ON tb_matpel.id_matpel = tb_jadwal.id_matpel JOIN tb_kelas ON tb_kelas.id_kelas = tb_jadwal.id_kelas where tb_jadwal.nip='981273' and hari='4' 
+											order by jam_pelajaran ASC";
+											$query= mysqli_query($conn, $sql);
+											while($jadwalGuru = mysqli_fetch_array($query)){
+												echo "<tr>";
+													echo "<td>".$jadwalGuru['jam_pelajaran']."</td>";
+													echo "<td>".$jadwalGuru['nama_matpel']."</td>";
+													echo "<td>".$jadwalGuru['nama']."</td>";
+											 	echo "</tr>";
+											}
+										 ?>
 					                 </tbody>
 					            </table>
 					        </div>
@@ -176,19 +152,25 @@
 		            			<table class="table">
 		              				<thead align="center">
 		                				<tr>
-		                  					<th style="width: 50px;">NO.</th>
 		                  					<th>JAM PELAJARAN</th>
 		                  					<th>MATA PELAJARAN</th>
 					                      	<th>KELAS</th>
 					                    </tr>
 					                </thead>
 					                <tbody>
-					                    <tr>
-					                      	<th scope="row">1</th>
-					                      	<td></td>
-					                      	<td></td>
-					                      	<td></td>
-					                    </tr>
+					                    <?php
+											// $guru = $_GET['nip']; 
+											$sql = "SELECT tb_jadwal.*, tb_guru.nama , tb_matpel.nama_matpel, tb_kelas.nama FROM `tb_jadwal` JOIN tb_guru ON tb_jadwal.nip = tb_guru.nip JOIN tb_matpel ON tb_matpel.id_matpel = tb_jadwal.id_matpel JOIN tb_kelas ON tb_kelas.id_kelas = tb_jadwal.id_kelas where tb_jadwal.nip='981273' and hari='5' 
+											order by jam_pelajaran ASC";
+											$query= mysqli_query($conn, $sql);
+											while($jadwalGuru = mysqli_fetch_array($query)){
+												echo "<tr>";
+													echo "<td>".$jadwalGuru['jam_pelajaran']."</td>";
+													echo "<td>".$jadwalGuru['nama_matpel']."</td>";
+													echo "<td>".$jadwalGuru['nama']."</td>";
+											 	echo "</tr>";
+											}
+										 ?>
 					                 </tbody>
 					            </table>
 					        </div>
