@@ -46,7 +46,7 @@
         <div id="sidebar-wrapper" data-simplebar="" data-simplebar-auto-hide="true">
             <div class="menu">
                 <a>
-                    <p class="text-menu">HALAMAN ADMIN</p>
+                    <h5 style="padding-top: 20px;"><i class="zmdi zmdi-brightness-auto"></i> <b>ADMIN</b></h5>
                 </a>
             </div>
             <div class="dropdown-divider"></div>

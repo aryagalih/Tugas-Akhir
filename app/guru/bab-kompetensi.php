@@ -31,7 +31,7 @@
 								<tr>
 									<th style="width: 50px;">no</th>
 									<th>Bab Kompetensi</th>
-									<th style="width: 50px;">Opsi</th>
+									<th style="width: 50px;">Action</th>
 								</tr>
 							</thead>
 							<tbody>

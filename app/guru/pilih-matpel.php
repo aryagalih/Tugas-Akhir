@@ -30,7 +30,7 @@
 	                    		<tr>
                                     <th style=" width: 50px;"> No </th>
 	                      			<th>Mata Pelajaran</th>
-	                      			<th style="width: 50px;">Opsi</th>
+	                      			<th style="width: 50px;">Action</th>
 	                    		</tr>
 	                  		</thead>
 	                  		<tbody>

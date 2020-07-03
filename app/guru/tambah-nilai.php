@@ -32,7 +32,7 @@
 				<div class="card-body">
 					<div class="row">
         				<div class="col">
-          					<h2><i class="zmdi zmdi-home"></i> Tambah Nilai</h2>
+          					<h2><i class="zmdi zmdi-playlist-plus"></i> Tambah Nilai</h2>
         				</div>
       				</div>
       				<div class="dropdown-divider"></div>

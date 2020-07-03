@@ -72,7 +72,7 @@
 							                      		<th>JK</th>
 							                      		<th>Alamat</th>
 							                      		<th>No.Telpon</th>
-							                      		<th style="width: 15px;">Opsi</th>
+							                      		<th style="width: 15px;">Action</th>
 							                    	</tr>
 							                  	</thead>
 						                  		<tbody>

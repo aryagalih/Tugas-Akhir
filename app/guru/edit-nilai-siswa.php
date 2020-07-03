@@ -45,7 +45,10 @@
 								<tr>
 									<th style="width: 50px;">no</th>
 									<th>Nama</th>
-									<th style="width: 50px;">Opsi</th>
+									<th style="width: 105px; font-size: 11px;"> Nilai <br> Pengetahuan</th>
+							      	<th style="width: 105px; font-size: 11px;"> Nilai <br> Keterampilan</th>
+							      	<th style="width: 105px; font-size: 11px;"> Nilai <br> Sikap</th>
+									<th style="width: 50px;">Action</th>
 								</tr>
 							</thead>
 							<tbody>
@@ -60,6 +63,9 @@
 										echo "<tr>";
 											echo "<td>".$n++."</td>";
 											echo "<td>".$nilai['nama']. "</td>";
+											echo "<td>".$nilai['nilai_pengetahuan']. "</td>";
+											echo "<td>".$nilai['nilai_keterampilan']. "</td>";
+											echo "<td>".$nilai['nilai_sikap']. "</td>";
 											echo "<td>
 													<a href='#' class='btn btn-primary' title='".$nilai['nis']."' onclick='editSiswa(this)'><i class='icon-note'></i></a>
 													<a href='#' class='btn btn-warning text-white' title='".$nilai['nis']."' onclick='hapus(this)'><i class='icon-trash'></i></a>

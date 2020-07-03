@@ -16,7 +16,7 @@
       			<div class="card-body">
           			<div class="row">
             			<div class="col">
-              				<h2><i class="zmdi zmdi-grid"></i> Kelola Nilai</h2>
+              				<h2><i class="zmdi zmdi-file-text"></i> Kelola Nilai</h2>
             			</div>
           			</div>
           			<div class="dropdown-divider"></div>
@@ -65,7 +65,7 @@
                                           			<tr>
                                               			<th style="width: 5px;">No</th>
                                               			<th>Nama Kelas</th>
-                                              			<th style="width: 50px;">Opsi</th>
+                                              			<th style="width: 50px;">Action</th>
                                           			</tr>
                                         		</thead>
                                         		<tbody>
@@ -97,7 +97,7 @@
 	                                            	<tr>
 	                                                	<th style="width: 5px;">No</th>
 	                                                	<th>Nama Kelas</th>
-	                                                	<th style="width: 50px;">Opsi</th>
+	                                                	<th style="width: 50px;">Action</th>
 	                                            	</tr>
 	                                          	</thead>
 	                                          	<tbody>
@@ -129,7 +129,7 @@
                                             		<tr>
                                                 		<th style="width: 5px;">No</th>
                                                 		<th>Nama Kelas</th>
-                                                		<th style="width: 50px;">Opsi</th>
+                                                		<th style="width: 50px;">Action</th>
                                             		</tr>
                                           		</thead>
                                           		<tbody>

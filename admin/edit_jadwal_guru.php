@@ -93,7 +93,7 @@ $jampel = array(
 							                     		<th>Jam Pelajaran</th>
 							                      		<th>Pelajaran</th>
 							                      		<th>Kelas</th>
-							                      		<th style="width: 15px;">Opsi</th>
+							                      		<th style="width: 15px;">Action</th>
 							                    	</tr>
 							                  	</thead>
 						                  		<tbody>
@@ -133,7 +133,7 @@ $jampel = array(
 							                     		<th>Jam Pelajaran</th>
 							                      		<th>Pelajaran</th>
 							                      		<th>Kelas</th>
-							                      		<th style="width: 15px;">Opsi</th>
+							                      		<th style="width: 15px;">Action</th>
 							                    	</tr>
 							                  	</thead>
 						                  		<tbody>
@@ -173,7 +173,7 @@ $jampel = array(
 							                     		<th>Jam Pelajaran</th>
 							                      		<th>Pelajaran</th>
 							                      		<th>Kelas</th>
-							                      		<th style="width: 15px;">Opsi</th>
+							                      		<th style="width: 15px;">Action</th>
 							                    	</tr>
 							                  	</thead>
 						                  		<tbody>
@@ -213,7 +213,7 @@ $jampel = array(
 							                     		<th>Jam Pelajaran</th>
 							                      		<th>Pelajaran</th>
 							                      		<th>Kelas</th>
-							                      		<th style="width: 15px;">Opsi</th>
+							                      		<th style="width: 15px;">Action</th>
 							                    	</tr>
 							                  	</thead>
 						                  		<tbody>
@@ -253,7 +253,7 @@ $jampel = array(
 							                     		<th>Jam Pelajaran</th>
 							                      		<th>Pelajaran</th>
 							                      		<th>Kelas</th>
-							                      		<th style="width: 15px;">Opsi</th>
+							                      		<th style="width: 15px;">Action</th>
 							                    	</tr>
 							                  	</thead>
 						                  		<tbody>

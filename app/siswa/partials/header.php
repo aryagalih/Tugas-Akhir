@@ -47,13 +47,13 @@
         <div id="sidebar-wrapper" data-simplebar="" data-simplebar-auto-hide="true">
             <div class="menu">
                 <a>
-                    <h5 class="text-menu">Menu</h5>
+                    <h5 style="padding-top: 20px;"><i class="zmdi zmdi-brightness-auto"></i> <b>SISWA</b></h5>
                 </a>
             </div>
             <ul class="sidebar-menu do-nicescrol">
                 <li>
                     <a href=".">
-                        <i class="icon-user"></i> <span>MY PROFILE</span>
+                        <i class="icon-user"></i> <span>PROFILE</span>
                     </a>
                 </li>
                 <li>

@@ -75,7 +75,7 @@
 							                      		<th>Kelas</th>
 							                      		<th>Alamat</th>
 							                      		<th>JK</th>
-							                      		<th style="width: 15px;">Opsi</th>
+							                      		<th style="width: 15px;">Action</th>
 							                    	</tr>
 							                  	</thead>
 						                  		<tbody>
@@ -121,7 +121,7 @@
 							                      		<th>Kelas</th>
 							                      		<th>Alamat</th>
 							                      		<th>JK</th>
-							                      		<th style="width: 15px;">Opsi</th>
+							                      		<th style="width: 15px;">Action</th>
 							                    	</tr>
 							                  	</thead>
 						                  		<tbody>
@@ -167,7 +167,7 @@
 							                      		<th>Kelas</th>
 							                      		<th>Alamat</th>
 							                      		<th>JK</th>
-							                      		<th style="width: 15px;">Opsi</th>
+							                      		<th style="width: 15px;">Action</th>
 							                    	</tr>
 							                  	</thead>
 						                  		<tbody>

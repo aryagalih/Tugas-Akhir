@@ -16,7 +16,7 @@
       			<div class="card-body">
           			<div class="row">
             			<div class="col">
-              				<h2><i class="zmdi zmdi-grid"></i> Lihat Nilai</h2>
+              				<h2><i class="zmdi zmdi-file-text"></i> Lihat Nilai</h2>
             			</div>
           			</div>
           			<div class="dropdown-divider"></div>

@@ -36,7 +36,7 @@
 							                      		<th style="width: 5px;">No</th>
 							                      		<th>NIP</th>
 							                      		<th>Nama</th>
-							                      		<th style="width: 15px;">Opsi</th>
+							                      		<th style="width: 15px;">Action</th>
 							                    	</tr>
 							                  	</thead>
 						                  		<tbody>

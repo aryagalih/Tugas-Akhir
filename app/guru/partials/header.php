@@ -47,7 +47,7 @@
         <div id="sidebar-wrapper" data-simplebar="" data-simplebar-auto-hide="true">
             <div class="menu">
                 <a>
-                    <h5 class="text-menu">HALAMAN GURU</h5>
+                    <h5 style="padding-top: 20px;"><i class="zmdi zmdi-brightness-auto"></i> <b>GURU</b></h5>
                 </a>
             </div>
             <div class="dropdown-divider"></div>
@@ -59,7 +59,7 @@
                 </li>
                 <li>
                     <a href="nilai.php">
-                        <i class="zmdi zmdi-grid"></i> <span>KELOLA NILAI</span>
+                        <i class="zmdi zmdi-file-text"></i> <span>KELOLA NILAI</span>
                     </a>
                 </li>
                 <li>
