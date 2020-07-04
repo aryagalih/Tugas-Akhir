@@ -25,7 +25,7 @@
           <div class="card-body">
               <div class="row">
                   <div class="col">
-                      <h2><i class="zmdi zmdi-grid"></i> Nilai Kompetensi</h2>
+                      <h2><i class="zmdi zmdi-file-text"></i> Nilai Kompetensi</h2>
                   </div>
               </div>
               <div class="dropdown-divider"></div>
@@ -38,7 +38,7 @@
                     <div class="form-group row">
                       <label for="kelas" class="col-md-2 col-form-label form-control-label"> Pilih Matap Pelajaran : </label>
                       <div class="col-md-8">
-                          <select name="v_kelas" id="v_kelas" required class="form-control">
+                          <select name="v_nilai" id="v_nilai" required class="form-control">
                               <option value="" disabled="" selected="">Pilih Mata Pelajaran</option>
                               <?php 
                                 while($data_nilai = mysqli_fetch_array($query_matpel)){
@@ -63,7 +63,7 @@
 
 <script type="text/javascript">
     $(document).ready(function(){
-        $('.data').load("data.php");
+        $('.data').load("data-nilai.php");
         
         $("#search").click(function(e){
             e.preventDefault();

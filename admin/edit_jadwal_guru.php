@@ -28,15 +28,29 @@ $jampel = array(
 	"13:40 - 14:20",
 	"14:20 - 15:00",
 );
-
 ?>
+<?php 
+	$query_guru = mysqli_query($conn, "SELECT tb_jadwal.*, tb_guru.nama FROM tb_jadwal join tb_guru on tb_jadwal.nip = tb_guru.nip");
+	$datagurus = array();
+	while ($dataguru = mysqli_fetch_assoc($query_guru)){
+		array_push($datagurus, $datagurus);
+	}
+
+ ?>
 
  <div class="clearfix"  id="editjadwal"></div>
     <div class="content-wrapper">
         <div class="container-fluid"><br>
         	<div class="card">
                 <div class="card-body">
-                    <h2><i class="icon-note"></i> Edit Jadwal guru</h2>
+                    <div class="row">
+		                <div class="col-md-11">
+		                    <h2><i class="icon-note"></i> Edit Jadwal guru</h2>
+		                </div>
+		                <div class="col-md-1">
+		                    <h2><a href=""><i class="zmdi zmdi-print text-white" title="Print Nilai"></i></a></h2>
+		                </div>
+		            </div>
                     <div class="dropdown-divider"></div>
                     <?php 
 		    			switch ((isset($_GET['system_message']) ? $_GET['system_message'] : '')) {
@@ -63,7 +77,6 @@ $jampel = array(
 				<div class="col">
                     <div class="card">
                         <div class="card-body">
-                        	<h3>Kelola Jadwal Guru dengan nip: <?= $_GET['nip'];?></h3>
                             <ul class="nav nav-tabs nav-tabs-primary top-icon nav-justified">
                             	
                                 <li class="nav-item">

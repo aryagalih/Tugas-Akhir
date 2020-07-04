@@ -10,7 +10,14 @@
     <div class="container-fluid"><br> 
         <div class="card">
           <div class="card-body">
-            <h2><i class="zmdi zmdi-assignment"></i> Jadwal Kelas</h2>
+            <div class="row">
+                <div class="col-md-11">
+                    <h2><i class="zmdi zmdi-assignment"></i> Jadwal Kelas</h2>
+                </div>
+                <div class="col-md-1">
+                    <h2><a href=""><i class="zmdi zmdi-print text-white" title="Print Nilai"></i></a></h2>
+                </div>
+            </div>
             <div class="dropdown-divider"></div>
           </div>
         </div>

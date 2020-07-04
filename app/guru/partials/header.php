@@ -13,7 +13,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <title>Halaman Guru</title>
     <link href="../../assets/images/icon-logo/guru.ico" rel="icon">
-    <link href="../../assets/plugins/vectormap/jquery-jvectormap-2.0.2.css" rel="stylesheet"/>
+    <!-- <link href="../../assets/plugins/vectormap/jquery-jvectormap-2.0.2.css" rel="stylesheet"/> -->
     <link href="../../assets/plugins/simplebar/css/simplebar.css" rel="stylesheet"/>
     <link href="../../assets/css/bootstrap.min.css" rel="stylesheet"/>
     <link href="../../assets/css/animate.css" rel="stylesheet" type="text/css"/>

@@ -87,13 +87,12 @@
       <!-- Modal content-->
       <div class="modal-content">
         <div class="modal-header">
-          <h4 class="modal-title">Edit Nilai</h4>
+          <h4 class="modal-title"><i class="icon-note"></i> Edit Nilai</h4>
           <button type="button" class="close" data-dismiss="modal">&times;</button>
         </div>	
         <form action="kelola-nilai/edit-nilai.php" method="POST">
         	<div class="modal-body text-center">
-        		<span id="e_nis"></span>
-        		<br/><br/>
+        		<span id="e_nis"></span><br>
         		<input type="hidden" value="<?= $_GET['id_matpel']; ?>" name="id_matpel">
         		<input type="hidden" id="v_id_nilai" name="id_nilai">
         		<input type="hidden" id="v_nis" name="nis">
@@ -174,7 +173,6 @@
  			success: function(data){
  				//console.log(data);
  				var json = JSON.parse(data);
- 				$('#e_nis').html('<i class="icon-note"></i> Edit data siswa dengan nis : '+nis);	
  				$('#v_id').val(json.id);
  				$('#v_id_nilai').val(json.id_nilai);
  				$('#v_nis').val(json.nis);
