@@ -84,10 +84,10 @@
                         <ul class="sidebar-menu">
 
                             <li>
-                                <a href="jadwal-guru.php">Jadwal Guru</a>
+                                <a href="jadwal-guru.php"><i class="zmdi zmdi-bookmark"></i> Jadwal Guru</a>
                             </li>
                             <li>
-                                <a href="jadwal-kelas.php">Jadwal Kelas</a>
+                                <a href="jadwal-kelas.php"><i class="zmdi zmdi-bookmark"></i> Jadwal Kelas</a>
                             </li>
                         </ul>
                     </div>

@@ -47,7 +47,7 @@
         <div id="sidebar-wrapper" data-simplebar="" data-simplebar-auto-hide="true">
             <div class="menu">
                 <a>
-                    <h5 style="padding-top: 20px;"><i class="zmdi zmdi-brightness-auto"></i> <b>GURU</b></h5>
+                    <h5 style="padding-top: 20px;"><i class="zmdi zmdi-bookmark"></i> <b>GURU</b></h5>
                 </a>
             </div>
             <div class="dropdown-divider"></div>

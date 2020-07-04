@@ -51,7 +51,7 @@
                                 				<?php 
                                                     include('config.php');
                                                     $kelas = $_GET['id_kelas'];
-                                                    $sql = "SELECT tb_jadwal.*, tb_guru.nama , tb_matpel.nama_matpel FROM `tb_jadwal` JOIN tb_guru ON tb_jadwal.nip = tb_guru.nip JOIN tb_matpel ON tb_matpel.id_matpel = tb_jadwal.id_matpel JOIN tb_kelas ON tb_kelas.id_kelas = tb_jadwal.id_kelas where tb_jadwal.id_kelas='".$kelas."' and hari='1' 
+                                                    $sql = "SELECT tb_jadwal.*, tb_guru.nama , tb_matpel.nama_matpel FROM `tb_jadwal` JOIN tb_guru ON tb_jadwal.nip = tb_guru.nip JOIN tb_matpel ON tb_matpel.id_matpel = tb_jadwal.id_matpel where tb_jadwal.id_kelas='".$kelas."' and hari='1' 
                                                         order by jam_pelajaran ASC";
                                                     $query= mysqli_query($conn, $sql); 
                                                 while($jadwal = mysqli_fetch_array($query)){
@@ -82,7 +82,9 @@
                                             <tbody>
                                                 <?php 
                                                     include('config.php');
-                                                    $sql = "SELECT tb_jadwal.*, tb_guru.nama , tb_matpel.nama_matpel FROM `tb_jadwal` JOIN tb_guru ON tb_jadwal.nip = tb_guru.nip JOIN tb_matpel ON tb_matpel.id_matpel = tb_jadwal.id_matpel JOIN tb_kelas ON tb_kelas.id_kelas = tb_jadwal.id_kelas where tb_kelas.id_kelas='".$kelas."' and hari='2'";
+                                                    $kelas = $_GET['id_kelas'];
+                                                    $sql = "SELECT tb_jadwal.*, tb_guru.nama , tb_matpel.nama_matpel FROM `tb_jadwal` JOIN tb_guru ON tb_jadwal.nip = tb_guru.nip JOIN tb_matpel ON tb_matpel.id_matpel = tb_jadwal.id_matpel where tb_jadwal.id_kelas='".$kelas."' and hari='2' 
+                                                        order by jam_pelajaran ASC";
                                                     $query= mysqli_query($conn, $sql); 
                                                 while($jadwal = mysqli_fetch_array($query)){
                                                     echo "<tr>";
@@ -113,7 +115,7 @@
                                                 <?php 
                                                     include('config.php');
                                                     $kelas = $_GET['id_kelas'];
-                                                    $sql = "SELECT tb_jadwal.*, tb_guru.nama , tb_matpel.nama_matpel FROM `tb_jadwal` JOIN tb_guru ON tb_jadwal.nip = tb_guru.nip JOIN tb_matpel ON tb_matpel.id_matpel = tb_jadwal.id_matpel JOIN tb_kelas ON tb_kelas.id_kelas = tb_jadwal.id_kelas where tb_jadwal.id_kelas='".$kelas."' and hari='3' 
+                                                    $sql = "SELECT tb_jadwal.*, tb_guru.nama , tb_matpel.nama_matpel FROM `tb_jadwal` JOIN tb_guru ON tb_jadwal.nip = tb_guru.nip JOIN tb_matpel ON tb_matpel.id_matpel = tb_jadwal.id_matpel where tb_jadwal.id_kelas='".$kelas."' and hari='3' 
                                                         order by jam_pelajaran ASC";
                                                     $query= mysqli_query($conn, $sql); 
                                                 while($jadwal = mysqli_fetch_array($query)){
@@ -145,7 +147,7 @@
                                                 <?php 
                                                     include('config.php');
                                                     $kelas = $_GET['id_kelas'];
-                                                    $sql = "SELECT tb_jadwal.*, tb_guru.nama , tb_matpel.nama_matpel FROM `tb_jadwal` JOIN tb_guru ON tb_jadwal.nip = tb_guru.nip JOIN tb_matpel ON tb_matpel.id_matpel = tb_jadwal.id_matpel JOIN tb_kelas ON tb_kelas.id_kelas = tb_jadwal.id_kelas where tb_jadwal.id_kelas='".$kelas."' and hari='4' 
+                                                    $sql = "SELECT tb_jadwal.*, tb_guru.nama , tb_matpel.nama_matpel FROM `tb_jadwal` JOIN tb_guru ON tb_jadwal.nip = tb_guru.nip JOIN tb_matpel ON tb_matpel.id_matpel = tb_jadwal.id_matpel where tb_jadwal.id_kelas='".$kelas."' and hari='4' 
                                                         order by jam_pelajaran ASC";
                                                     $query= mysqli_query($conn, $sql); 
                                                 while($jadwal = mysqli_fetch_array($query)){
@@ -177,7 +179,7 @@
                                                 <?php 
                                                     include('config.php');
                                                     $kelas = $_GET['id_kelas'];
-                                                    $sql = "SELECT tb_jadwal.*, tb_guru.nama , tb_matpel.nama_matpel FROM `tb_jadwal` JOIN tb_guru ON tb_jadwal.nip = tb_guru.nip JOIN tb_matpel ON tb_matpel.id_matpel = tb_jadwal.id_matpel JOIN tb_kelas ON tb_kelas.id_kelas = tb_jadwal.id_kelas where tb_jadwal.id_kelas='".$kelas."' and hari='5' 
+                                                    $sql = "SELECT tb_jadwal.*, tb_guru.nama , tb_matpel.nama_matpel FROM `tb_jadwal` JOIN tb_guru ON tb_jadwal.nip = tb_guru.nip JOIN tb_matpel ON tb_matpel.id_matpel = tb_jadwal.id_matpel where tb_jadwal.id_kelas='".$kelas."' and hari='5' 
                                                         order by jam_pelajaran ASC";
                                                     $query= mysqli_query($conn, $sql); 
                                                 while($jadwal = mysqli_fetch_array($query)){

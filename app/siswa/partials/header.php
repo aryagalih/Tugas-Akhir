@@ -11,7 +11,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <title>Halaman Siswa</title>
     <link href="../../assets/images/icon-logo/siswa.ico" rel="icon">
-    <link href="../../assets/plugins/vectormap/jquery-jvectormap-2.0.2.css" rel="stylesheet"/>
+    <!-- <link href="../../assets/plugins/vectormap/jquery-jvectormap-2.0.2.css" rel="stylesheet"/> -->
     <link href="../../assets/plugins/simplebar/css/simplebar.css" rel="stylesheet"/>
     <link href="../../assets/css/bootstrap.min.css" rel="stylesheet"/>
     <link href="../../assets/css/animate.css" rel="stylesheet" type="text/css"/>
@@ -47,13 +47,18 @@
         <div id="sidebar-wrapper" data-simplebar="" data-simplebar-auto-hide="true">
             <div class="menu">
                 <a>
-                    <h5 style="padding-top: 20px;"><i class="zmdi zmdi-brightness-auto"></i> <b>SISWA</b></h5>
+                    <h5 style="padding-top: 20px;"><i class="zmdi zmdi-bookmark"></i> <b>SISWA</b></h5>
                 </a>
             </div>
             <ul class="sidebar-menu do-nicescrol">
                 <li>
                     <a href=".">
                         <i class="icon-user"></i> <span>PROFILE</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="guru.php">
+                        <i class="zmdi zmdi-account-calendar"></i> <span>DATA GURU</span>
                     </a>
                 </li>
                 <li>

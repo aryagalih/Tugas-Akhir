@@ -5,18 +5,18 @@
  <?php  
   $query_kelas = mysqli_query($conn, "SELECT * FROM tb_kelas");
   $query_matpel = mysqli_query($conn, "SELECT * FROM tb_matpel");
-
-  $datamapels = array();
-  $datakelass = array();
-  while ($datamapel = mysqli_fetch_assoc($query_matpel)) {
-    array_push($datamapels, $datamapel);
-  }
-  while ($datakelas = mysqli_fetch_assoc($query_kelas)) {
-    array_push($datakelass, $datakelas);
-  }
-
-
+  include('config.php');
 ?>
+
+ <?php
+    $query_nilai = mysqli_query($conn, "SELECT * FROM tb_detail_penilaian"); 
+    $v_nilai="";
+    if (isset($_POST['search'])) {
+        $v_nilai = $_POST['v_nilai'];
+    } 
+
+    $query_matpel = mysqli_query($conn, "SELECT * FROM tb_penilaian join tb_matpel on tb_penilaian.id_matpel = tb_matpel.id_matpel");
+ ?>
 
 <div class="clearfix"></div>
   	<div class="content-wrapper">
@@ -35,39 +35,23 @@
         		<div class="col">
           			<div class="card">
             			<div class="card-body">
-                      <div class="form-group row">
-                          <label for="kelas" class="col-md-2 col-form-label form-control-label"> Pilih Mata Pelajaran : </label>
-                          <div class="col">
-                              <select required class="form-control">
-                                  <option value="" disabled="" selected="">Pilih Mata Pelajaran</option>
-                                  <?php foreach ($datamapels as $key): ?>
-                                <option value="<?=$key['id_matpel']?>"><?=$key['nama_matpel']?></option>
-                              <?php endforeach ?>
-                              </select>
-                          </div>
+                    <div class="form-group row">
+                      <label for="kelas" class="col-md-2 col-form-label form-control-label"> Pilih Matap Pelajaran : </label>
+                      <div class="col-md-8">
+                          <select name="v_kelas" id="v_kelas" required class="form-control">
+                              <option value="" disabled="" selected="">Pilih Mata Pelajaran</option>
+                              <?php 
+                                while($data_nilai = mysqli_fetch_array($query_matpel)){
+                                  echo "<option value='".$data_nilai['id_matpel']."'>".$data_nilai['nama_matpel']."</option>";
+                                }
+                              ?>
+                          </select>
                       </div>
-              				<div class="table-responsive">
-                				<table class="table">
-                  					<thead>
-                    					<tr>
-                      						<th scope="col">No</th>
-                      						<th scope="col">BAB Kompetensi</th>
-                      						<th scope="col">P</th>
-                      						<th scope="col">K</th>
-                      						<th scope="col">S</th>
-                    					</tr>
-                  					</thead>
-                  					<tbody>
-	                    				<tr>
-	                      					<th scope="row">1</th>
-	                      					<td>Matrix</td>
-	                      					<td>80</td>
-	                      					<td>75</td>
-	                      					<td>90</td>
-	                   			 		</tr>
-                  					</tbody>
-                				</table>
-              				</div>
+                      <div class="col-md-2">
+                          <button id="search" name="search" class="btn btn-primary"><i class="fa fa-search"></i> Pilih</button>
+                      </div>
+                    </div>
+            				<div class="data"></div>
             			</div>
           			</div>
         		</div>
@@ -76,3 +60,22 @@
 <?php 
 	require_once('partials/footer.php');
 ?>
+
+<script type="text/javascript">
+    $(document).ready(function(){
+        $('.data').load("data.php");
+        
+        $("#search").click(function(e){
+            e.preventDefault();
+            var nilai = $("#v_nilai").val();
+            $.ajax({
+                type: 'POST',
+                url: "data.php",
+                data: { nilai: nilai },
+                success: function(hasil) {           
+                    $('.data').html(hasil);
+                },
+            });
+        });
+    });
+</script>
