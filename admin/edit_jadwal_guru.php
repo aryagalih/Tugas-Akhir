@@ -48,7 +48,7 @@ $jampel = array(
 		                    <h2><i class="icon-note"></i> Edit Jadwal guru</h2>
 		                </div>
 		                <div class="col-md-1">
-		                    <h2><a href=""><i class="zmdi zmdi-print text-white" title="Print Nilai"></i></a></h2>
+		                    <h2><a href="print/print-jadwal-guru.php?nip=<?=$_GET['nip']?>" target="_blank"><i class="zmdi zmdi-print text-white"></i></a></h2>
 		                </div>
 		            </div>
                     <div class="dropdown-divider"></div>

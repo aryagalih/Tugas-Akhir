@@ -1,5 +1,6 @@
 <?php 
 	require_once('partials/header.php');
+  require_once('config.php');
 ?>
 
  <?php  
@@ -35,20 +36,43 @@
         		<div class="col">
           			<div class="card">
             			<div class="card-body">
-                    <div class="form-group row">
-                      <label for="kelas" class="col-md-2 col-form-label form-control-label"> Pilih Matap Pelajaran : </label>
-                      <div class="col-md-8">
-                          <select name="v_nilai" id="v_nilai" required class="form-control">
-                              <option value="" disabled="" selected="">Pilih Mata Pelajaran</option>
-                              <?php 
-                                while($data_nilai = mysqli_fetch_array($query_matpel)){
-                                  echo "<option value='".$data_nilai['id_matpel']."'>".$data_nilai['nama_matpel']."</option>";
-                                }
-                              ?>
-                          </select>
-                      </div>
-                      <div class="col-md-2">
-                          <button id="search" name="search" class="btn btn-primary"><i class="fa fa-search"></i> Pilih</button>
+                    <div class="row">
+                        <div align="center" class="col">
+                            <h2><i class="zmdi zmdi-file-text"></i> Nilai Kompetensi Siswa</h2>
+                        </div>
+                    </div>
+                    <div class="row">
+                      <div class="col">
+                        <div class="table-responsive">
+                          <table class="table">
+                            <thead align="center">
+                              <tr>
+                                <td>No</td>
+                                <td>Mata Pelajaraan</td>
+                                <td>Bab Kompetensi</td>
+                                <th style="width: 105px; font-size: 11px;"> Nilai <br> Pengetahuan</th>
+                                <th style="width: 105px; font-size: 11px;"> Nilai <br> Keterampilan</th>
+                                <th style="width: 105px; font-size: 11px;"> Nilai <br> Sikap</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <?php
+                                  $sql = "SELECT tb_detail_penilaian.*, tb_matpel.nama_matpel , tb_penilaian.bab_kompetensi from tb_detail_penilaian join tb_penilaian on tb_penilaian.id_nilai=tb_detail_penilaian.id_nilai join tb_siswa on tb_detail_penilaian.nis = tb_siswa.nis join tb_matpel on tb_penilaian.id_matpel = tb_matpel.id_matpel where tb_siswa.nis='12349' 
+                                    order by nama_matpel ASC";
+                                  $query= mysqli_query($conn, $sql);  
+                                  $n = 1;
+                                  while($nilai = mysqli_fetch_array($query)){
+                                    echo "<tr>";
+                                      echo "<td>".$n++."</td>";
+                                      echo "<td>".$nilai['nama_matpel']. "</td>";
+                                      echo "<td>".$nilai['bab_kompetensi']. "</td>";
+                                      echo "<td>".$nilai['nilai_pengetahuan']. "</td>";
+                                      echo "<td>".$nilai['nilai_keterampilan']. "</td>";
+                                      echo "<td>".$nilai['nilai_sikap']. "</td>";
+                                    echo "</tr>";
+                                   }
+                                ?>
+                            </tbody>
                       </div>
                     </div>
             				<div class="data"></div>
@@ -61,7 +85,7 @@
 	require_once('partials/footer.php');
 ?>
 
-<script type="text/javascript">
+<!-- <script type="text/javascript">
     $(document).ready(function(){
         $('.data').load("data-nilai.php");
         
@@ -78,4 +102,4 @@
             });
         });
     });
-</script>
+</script> -->

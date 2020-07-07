@@ -53,14 +53,13 @@
                             <h5 align="center">Jumlah Siswa Kelas 3 : </h5>
                             <div class="dropdown-divider"></div>
                             <div class="card-body pt-5">
-                              <i class="icon-user" style="width: 50px;">
+                              <i class="icon-user" ></i>
                                 <?php  
                                   $sql= "SELECT tb_kelas.status FROM tb_kelas JOIN tb_siswa ON tb_kelas.id_kelas = tb_siswa.kelas where tb_kelas.status = 2";
                                   $query = mysqli_query($conn, $sql);
                                   $jumlah = mysqli_num_rows($query);
                                   echo $jumlah;
                                 ?>
-                              </i>
                             </div>
                         </div>
                     </div>

@@ -66,7 +66,7 @@
                                           			<tr>
                                               			<th style="width: 5px;">No</th>
                                               			<th>Nama Kelas</th>
-                                              			<th style="width: 50px;">Opsi</th>
+                                              			<th style="width: 50px;">Action</th>
                                           			</tr>
                                         		</thead>
                                         		<tbody>
@@ -97,7 +97,7 @@
 	                                            	<tr>
 	                                                	<th style="width: 5px;">No</th>
 	                                                	<th>Nama Kelas</th>
-	                                                	<th style="width: 50px;">Opsi</th>
+	                                                	<th style="width: 50px;">Action</th>
 	                                            	</tr>
 	                                          	</thead>
 	                                          	<tbody>
@@ -128,7 +128,7 @@
                                             		<tr>
                                                 		<th style="width: 5px;">No</th>
                                                 		<th>Nama Kelas</th>
-                                                		<th style="width: 50px;">Opsi</th>
+                                                		<th style="width: 50px;">Action</th>
                                             		</tr>
                                           		</thead>
                                           		<tbody>

@@ -7,8 +7,8 @@ $mpdf = new \Mpdf\Mpdf();
 include('../config.php');
 $harine = ["Senin", "Selasa", "Rabu", "Kamis", "Jum'at"];
 
-$kelas = $_GET['id_kelas'];
-$sql = "SELECT tb_jadwal.*, tb_guru.nama , tb_matpel.nama_matpel FROM `tb_jadwal` JOIN tb_guru ON tb_jadwal.nip = tb_guru.nip JOIN tb_matpel ON tb_matpel.id_matpel = tb_jadwal.id_matpel where tb_jadwal.id_kelas=".$kelas." order by hari, jam_pelajaran ASC";
+$guru = $_GET['nip'];
+$sql = "SELECT tb_jadwal.*, tb_guru.nama , tb_matpel.nama_matpel, tb_kelas.nama FROM `tb_jadwal` JOIN tb_guru ON tb_jadwal.nip = tb_guru.nip JOIN tb_matpel ON tb_matpel.id_matpel = tb_jadwal.id_matpel JOIN tb_kelas ON tb_kelas.id_kelas = tb_jadwal.id_kelas where tb_jadwal.nip=".$guru." order by jam_pelajaran ASC";
 $query= mysqli_query($conn, $sql);
 $query2= mysqli_query($conn, $sql);
 
@@ -18,11 +18,12 @@ while($jadwal = mysqli_fetch_array($query2)){
 	$data = array(
 		'jam' => $jadwal['jam_pelajaran'],
 		'mapel' => $jadwal['nama_matpel'],
-		'guru' => $jadwal['nama'],
+		'kelas' => $jadwal['nama'],
 		'hari' => $jadwal['hari']
 	);
 	array_push($mapel, $data);
 }
+
 
 $html = '
 <!DOCTYPE html>
@@ -62,7 +63,7 @@ for ($i=0; $i < count($harine); $i++) {
 					<tr>
 						<td>'.$mapel[$j]['jam'].'</td>
 						<td>'.$mapel[$j]['mapel'].'</td>
-						<td>'.$mapel[$j]['guru'].'</td>
+						<td>'.$mapel[$j]['kelas'].'</td>
 					</tr>
 			';	
 		}
