@@ -16,8 +16,8 @@
         				</div>
         				<div class="col-md-9">
         					<form class="search-bar">
-					        <input type="text" class="form-control" id="search-field" placeholder="Search" title="Type in a name">
-					         <a href="javascript:void();" class="search"><i class="icon-magnifier"></i></a>
+					        	<input type="text" class="form-control" id="search-field" placeholder="Search" title="Type in a name">
+					        	<i class="icon-magnifier search"></i>
 					      </form>
         				</div>
         			</div>
