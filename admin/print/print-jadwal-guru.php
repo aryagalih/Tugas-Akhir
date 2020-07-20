@@ -30,10 +30,10 @@ $html = '
 <html lang="en">
 	<head>
 		<meta charset="UTF-8">
-		<title>Print Jadwal</title>
+		<title>Print Jadwal Guru</title>
 	</head>
 	<body>
-		<h1 align="center">Jadwal Kelas</h1>
+		<h1 align="center">Jadwal Jhonson</h1>
 		<br>
 		
 			';
@@ -42,7 +42,7 @@ $html = '
 
 for ($i=0; $i < count($harine); $i++) { 
 	$html .= '
-			<table align = "center" border="1" cellpadding="10">
+			<table align = "center" class="table" border="1" cellpadding="10">
 				<thead align="center" style="font-size: 17px;">
 					<tr>
 						<th colspan="3" align="center">Hari '.$harine[$i].'</th>
@@ -50,7 +50,7 @@ for ($i=0; $i < count($harine); $i++) {
 					<tr>
 						<th>Jam Pelajaran</th>
 						<th>Mata Pelajaran</th>
-						<th>Guru Pengajar</th>
+						<th>Kelas</th>
 					</tr>
 				</thead>
 				<tbody>';

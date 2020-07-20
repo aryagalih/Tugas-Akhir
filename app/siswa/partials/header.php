@@ -34,7 +34,7 @@
                     <ul class="dropdown-menu dropdown-menu-right">
                         <a class="dropdown-item" href="#"><i class="icon-settings mr-2"></i> Setting</a>
                         <li class="dropdown-divider"></li>
-                        <a class="dropdown-item" href="../app/auth/proses_logout.php"><i class="icon-power mr-2"></i> Logout</a>
+                        <a class="dropdown-item" href="../auth/proses_logout.php"><i class="icon-power mr-2"></i> Logout</a>
                     </ul>
                 </li>
             </ul>

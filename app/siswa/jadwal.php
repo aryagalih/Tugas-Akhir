@@ -19,7 +19,7 @@
                     <div class="card-body">
                     	<ul class="nav nav-tabs nav-tabs-primary top-icon nav-justified">
                             <li class="nav-item">
-                                <a href="javascript:void();" data-target="#senins" data-toggle="pill" class="nav-link active"><i class="zmdi zmdi-format-list-bulleted"></i> <span class="hidden-xs">Senin</span></a>
+                                <a href="javascript:void();" data-target="#senin" data-toggle="pill" class="nav-link active"><i class="zmdi zmdi-format-list-bulleted"></i> <span class="hidden-xs">Senin</span></a>
                             </li>
                             <li class="nav-item">
                                 <a href="javascript:void();" data-target="#selasa" data-toggle="pill" class="nav-link"><i class="zmdi zmdi-format-list-bulleted"></i> <span class="hidden-xs">Selasa</span></a>
