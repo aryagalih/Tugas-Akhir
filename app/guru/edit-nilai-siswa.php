@@ -9,6 +9,7 @@
 	<div class="content-wrapper">
 		<div class="container-fluid">
 			<div class="card" style="margin-top: 22px;">
+				
 				<div class="card-body">
 					<div class="row">
 						<div class="col">
@@ -80,14 +81,14 @@
 			</div>
 		</div>
 	</div>
-	<!-- modal -->
+	<!-- modal EDIT -->
     <div class="modal fade" id="editModal" role="dialog">
     <div class="modal-dialog">
-    
+
       <!-- Modal content-->
       <div class="modal-content">
         <div class="modal-header">
-          <h4 class="modal-title"><i class="icon-note"></i> Edit Nilai</h4>
+          <h4 class="modal-title"><i class="icon-note"></i> EDIT NILAI SISWA</h4>
           <button type="button" class="close" data-dismiss="modal">&times;</button>
         </div>	
         <form action="kelola-nilai/edit-nilai.php" method="POST">
@@ -130,7 +131,8 @@
       </div>
      </div>
  </div>
-
+	
+	<!-- hapus modal -->
  	<div class="modal fade" id="hapusModal">
 		<div class="modal-dialog">
 			<div class="modal-content">
@@ -141,7 +143,7 @@
 			        </button>
 				</div>
 				<div class="modal-body">
-					<div class="text-center">YAKIN INGIN MENGHAPUS NILAI SISWA ?</div>
+					<div class="text-center">YAKIN INGIN MENGAHPUS NILAI SISWA ?</div>
 					<br><br>
 					<div class="pull-right">
 						<form action="kelola-nilai/hapus-nilai.php" method="POST">
@@ -181,7 +183,6 @@
  				$('#v_sikap').val(json.nilai_sikap);
  			},
  			error: function(data){
- 				//console.log(data);
  			}
  		});
  	}
